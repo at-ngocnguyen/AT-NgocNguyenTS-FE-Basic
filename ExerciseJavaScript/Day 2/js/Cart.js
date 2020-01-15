@@ -4,38 +4,53 @@ var cart = cartItem;
 var showCart = function () {
   data.forEach(getCart);
 }
+function showTotal() {
+  let total = 0;
+  if (cart.length > 0) {
+    for (var j = 0; j < cart.length; j++) {
+      total += data[j].products.price * data[j].count
+    }
+  }
+  // console.log(total)
+  var trtotal = document.createElement('tr');
+  var td = document.createElement('td');
+  td.setAttribute('colspan', '3');
+  var td2 = document.createElement('td');
+
+  var tdtotal1 = document.createElement('td');
+  tdtotal1.innerHTML = "Total";
+  var tdtotal2 = document.createElement('td');
+  tdtotal2.style.color = "red";
+  tdtotal2.innerHTML = Comma(total) + '<sup>$</sup>';
+
+  trtotal.appendChild(td);
+  trtotal.appendChild(tdtotal1);
+  trtotal.appendChild(tdtotal2);
+  trtotal.appendChild(td2);
+  // trtotal.appendChild(tdtotal2);
+  document.getElementById("js-cart-item").appendChild(trtotal);
+}
 function getCart(item, index) {
+  // console.log(item)
   var product = item.products;
-  // console.log("abc");
-  //call tr element from DOM
   var table = document.getElementById("js-cart-item");
   var row = document.createElement('tr');
+
   //Create td
   var td1 = document.createElement('td');
+  td1.innerHTML = index + 1;
   var td2 = document.createElement('td');
   td2.innerHTML = product.name;
   var td3 = document.createElement('td');
-  var td4 = document.createElement('td');
-  td4.innerHTML = product.price;
-  var td5 = document.createElement('td');
-  td5.innerHTML = product.price * item.count;
-  var td6 = document.createElement('td');
-  //Create Button sub and add count
-  var buttonsub = document.createElement('button');
-  buttonsub.innerHTML = "-";
-  buttonsub.onClick = function () {
-    console.log("abc")
-  };
-  var buttonadd = document.createElement('button');
-  buttonadd.innerHTML = "+";
-  buttonadd.onClick = function () {
-    edit_count(product, "+");
-  };
   var span = document.createElement('span');
   span.innerHTML = item.count;
-  td3.appendChild(buttonsub);
   td3.appendChild(span);
-  td3.appendChild(buttonadd);
+  var td4 = document.createElement('td');
+  td4.innerHTML = Comma(product.price) + '<sup>$</sup>';
+  var td5 = document.createElement('td');
+  td5.innerHTML = Comma(product.price * item.count) + '<sup>$</sup>';
+  var td6 = document.createElement('td');
+
   //Create Button Delete
   var buttondel = document.createElement('button');
   var icontrash = document.createElement('i');
@@ -56,38 +71,15 @@ function getCart(item, index) {
 }
 function delItem(product) {
   index = findProductInCart(data, product);
-  console.log(data);
+  // console.log(data);
   if (index !== -1) {
     data.splice(index, 1);
   }
   localStorage.setItem('CART', JSON.stringify(data));
 }
-function edit_count(product, desciption) {
-  var count = 1;
-  var index = findProductInCart(cart, products);
-  if (desciption == "+") {
-    count += 1;
-  }
-  else {
-    count -= 1;
-    if (count <= 0) {
-      count = 1;
-    }
-  }
-  if (index !== -1) {
-    cart[index].count = count;
-  } else {
-    cart.push({
-      product,
-      count
-    });
-  }
-  localStorage.setItem('CART', JSON.stringify(cart));
-
-}
 function findProductInCart(cart, products) {
   var index = -1;
-  console.log(cart)
+  // console.log(cart)
   if (cart.length > 0) {
     for (var i = 0; i < cart.length; i++) {
       if (cart[i].products.id === products.id) {
@@ -97,7 +89,25 @@ function findProductInCart(cart, products) {
     }
   }
   return index;
+};
+function Comma(number) {
+  number = '' + number;
+  if (number.length > 3) {
+    var mod = number.length % 3;
+    var output = (mod > 0 ? (number.substring(0, mod)) : '');
+    for (i = 0; i < Math.floor(number.length / 3); i++) {
+      if ((mod == 0) && (i == 0))
+        output += number.substring(mod + 3 * i, mod + 3 * i + 3);
+      else
+        output += '.' + number.substring(mod + 3 * i, mod + 3 * i + 3);
+    }
+    return (output);
+  }
+  else return number;
+}
+window.onload = function () {
+  showCart();
+  showTotal();
 }
 
 
-window.onload = showCart();

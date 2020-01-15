@@ -12,55 +12,51 @@
 
 <body>
   <header class="header-health">
-    <section class="head-logo">
-      <div class="logo">
-        <a href="./home.html"><img src="./img/logo.jpg" alt="" /></a>
-        <div class="title">
-          <h3>SPECIALIZED CLINIC</h3>
-          <p>Physlotherapy - Rehabilitation</p>
+    <div class="banner">
+      <div class="banner-relative">
+        <img src="./img/banner1.jpg" />
+      </div>
+    </div>
+    <div class="head-nav">
+      <div class="head-logo">
+        <div class="logo">
+          <img src="./img/logo.png" alt="" />
         </div>
       </div>
-      <div class="contact">
-        <img src="./img/phonecall.jpg" alt="" />
-        <p><i>Question for the doctor?</i><span>&#32;05113941 977</span></p>
-      </div>
-      <div class="cart-detail">
-        <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart"> abc</i></a>
-      </div>
-    </section>
-    <section class="head-nav">
       <nav>
         <ul class="header-navbar">
           <li><a href="./home.html">HOME</a></li>
+          <li><a href="#">GOLDEN RING</a></li>
+          <li><a href="#">DIAMON</a></li>
+          <li><a href="#">PLATINUM</a></li>
           <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">HEALTH SERVICES</a></li>
-          <li><a href="#">REGULAR MEDICINE</a></li>
-          <li><a href="#">SET CALENDAR</a></li>
-          <li><a href="#">CONSULT & CONTACT</a></li>
         </ul>
       </nav>
-      <div class="nav-img">
-        <img src="./img/icon-facebook.jpg" alt="" />
-        <img src="./img/icon-google.jpg" alt="" />
-        <img src="./img/icon-youtube.jpg" alt="" />
+      <div class="contact">
+        <div class="contact-item">
+          <p><i>Contact Us</i></p>
+          <p>&#32;05113941 977</p>
+        </div>
+        <div class="cart-detail">
+          <a href="./cart.html"><i class="fa fa-shopping-cart" id="cart"></i></a>
+        </div>
       </div>
-    </section>
+    </div>
+
+
+
   </header>
 
   <main>
-    <section class="banner">
-      <div class="banner-relative"><img src="./img/banner1.jpg" />
-        <div class="banner-absolute">
-          <a href="./home.html">HOME </a>/
-          <a href="#"> HEALTH SERVICES</a>
-        </div>
-      </div>
-
-    </section>
+    <div class="breadcrumb">
+      <a href="./home.html">HOME </a>
+      <span class="breadcrumb__item"></span>
+      <a href="./cart.html">CART</a>
+    </div>
     <section class="container clr">
       <h1>Cart item</h1>
       <div id="js-list-product">
-        <table id="js-cart-item">
+        <table id="js-cart-item" class="table">
           <tr>
             <th class="width-100px"></th>
             <th>Name</th>
@@ -113,7 +109,7 @@
     <section class="copyright">
       <p>&copy; 2018 - COPYRIGHT OF SPECIALIZED CLINIC</p>
       <p>DESIGN BY</p>
-      <span>DD.COM</span>
+      <p>DD.COM</p>
     </section>
   </footer>
   <script src="./js/Cart.js"></script>
