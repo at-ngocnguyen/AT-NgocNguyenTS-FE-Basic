@@ -1,10 +1,14 @@
-var data = JSON.parse(localStorage.getItem('CART'))
 
-if (data) {
-  document.getElementById("cart").innerHTML = "  " + data.length;
-} else {
-  document.getElementById("cart").innerHTML = "  " + 0;
+function shownumber() {
+  var data = JSON.parse(localStorage.getItem('CART'))
+  if (data) {
+    document.getElementById("cart").innerHTML = "  " + data.length;
+  } else {
+    document.getElementById("cart").innerHTML = "  " + 0;
+  }
 }
+shownumber();
+
 function findProductInCart(cart, products) {
   var index = -1;
   // console.log(cart)

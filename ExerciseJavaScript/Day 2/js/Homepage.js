@@ -57,7 +57,9 @@ var products = [
   },
 ]
 //loop and get object from array products
-products.forEach(getItem);
+function showItem() {
+  products.forEach(getItem);
+}
 
 function getItem(item, index) {
   var render = document.getElementById("js-list-product");
@@ -78,7 +80,10 @@ function getItem(item, index) {
   var button = document.createElement('button');
   button.setAttribute('class', 'js-button-addtocart btn-addtocart');
   button.innerHTML = 'Add to Cart';
-  button.onclick = function () { addCart(item); }
+  // button.onclick = function () { addCart(item);  }
+  button.addEventListener('click', function () { addCart(item) })
+  button.addEventListener('click', function () { shownumber() })
+
 
   //structure content
   div2.appendChild(h3);
@@ -90,7 +95,7 @@ function getItem(item, index) {
 }
 //Add to cart
 function addCart(products) {
-  // console.log(products);
+  // console.log(shownumber());
   var data = JSON.parse(localStorage.getItem('CART'))
   var cartItem = data ? data : [];
   var cart = cartItem;
@@ -98,12 +103,21 @@ function addCart(products) {
   var index = findProductInCart(cart, products);
   if (index !== -1) {
     cart[index].count += count;
+    document.getElementById("cart").innerHTML = ""
+
   } else {
     cart.push({
       products,
       count
     });
   }
+  document.getElementById("cart").innerHTML = '';
+  showItem();
+  shownumber();
   // item.disabled = true;
   localStorage.setItem('CART', JSON.stringify(cart));
+
+}
+window.onload = function () {
+  showItem();
 }

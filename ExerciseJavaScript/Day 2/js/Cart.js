@@ -1,14 +1,16 @@
 var data = []
 data = JSON.parse(localStorage.getItem('CART'))
 var table = document.getElementById("js-cart-item");
+var tbody = document.getElementById("js-cart-list");
+var tfoot = document.getElementById("js-cart-bottom");
 var showCart = function () {
   data.forEach(getCart);
 }
 function getCart(item, index) {
-  // console.log(item)
   var product = item.products;
   var row = document.createElement('tr');
-
+  // var tbody = document.createElement('tbody');
+  tbody.classList.add("tbody_style")
   //Create td
   var td1 = document.createElement('td');
   td1.innerHTML = index + 1;
@@ -29,9 +31,10 @@ function getCart(item, index) {
   var icontrash = document.createElement('i');
   icontrash.setAttribute('class', 'fa fa-trash');
   buttondel.appendChild(icontrash);
-  buttondel.onclick = function () {
-    delItem(product);
-  };
+  // buttondel.onclick = function () {
+  //   delItem(product);
+  // };
+  buttondel.addEventListener('click', function () { delItem(product) });
   td6.appendChild(buttondel);
   //Structure Cart Item
   row.appendChild(td1);
@@ -40,10 +43,11 @@ function getCart(item, index) {
   row.appendChild(td4);
   row.appendChild(td5);
   row.appendChild(td6);
-  table.appendChild(row)
+  tbody.appendChild(row)
+  // table.appendChild(row)
 }
 function showTotal() {
-  // console.log(data);
+  // console.log(tfoot);
   let total = 0;
   if (data.length > 0) {
     for (var j = 0; j < data.length; j++) {
@@ -67,21 +71,23 @@ function showTotal() {
   trtotal.appendChild(tdtotal2);
   trtotal.appendChild(td2);
   // trtotal.appendChild(tdtotal2);
-  document.getElementById("js-cart-item").appendChild(trtotal);
+  tfoot.appendChild(trtotal);
 }
 function delItem(product) {
-  var backup = data;
   var retVal = confirm("Do you want to delete ?");
   index = findProductInCart(data, product);
-  // console.log(data);
+  console.log(shownumber());
   if (retVal == true) {
     if (index !== -1) {
       data.splice(index, 1);
     }
-    localStorage.removeItem('CART');
-    localStorage.setItem('CART', JSON.stringify(backup));
-    table.removeChild();
+    localStorage.setItem('CART', JSON.stringify(data));
+    tbody.innerHTML = '';
+    tfoot.innerHTML = '';
     showCart();
+    showTotal();
+    shownumber();
+    //  Comma(number)
     return true;
   } else {
     return false;
