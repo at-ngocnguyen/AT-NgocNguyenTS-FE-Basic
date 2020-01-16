@@ -3,6 +3,7 @@
   src: url("font/utm-avo.woff") format("woff");
   src: url("font/utm-avo.woff") format("truetype");
 }
+
 @font-face {
   font-family: "utm-avo-bold";
   src: url("font/utm-avobold.woff") format("woff"),
@@ -26,10 +27,16 @@ body {
 a {
   text-decoration: none;
 }
-hr {
-  border: 1.5px solid #62c6f8;
+.line {
+  background-color: #62c6f8;
   margin: 21px 0 17px 0;
+  height: 3px;
   width: 66px;
+}
+.breadcrumb__item:before {
+  color: black;
+  content: "\00a0/\00a0";
+  margin: 0 10px;
 }
 ul {
   list-style-position: inside;
@@ -75,9 +82,6 @@ ul {
 .logo {
   display: flex;
   align-items: center;
-}
-.logo img {
-  margin-right: 18px;
 }
 ul {
   margin: 0;
@@ -151,7 +155,8 @@ header a:hover {
 .copyright p:first-child {
   margin-right: auto;
 }
-.copyright span {
+.copyright p:last-child {
+  margin-left: 5px;
   color: #7df1cf;
 }
 .book-schedule {
@@ -203,7 +208,7 @@ form button {
   font-size: 14px;
   width: 125px;
   height: 47px;
-  background-color: green;
+  background-color: #4cbc56;
   border: 0;
   color: white;
 }
@@ -281,7 +286,7 @@ img[src="./img/muiten.jpg"] {
   padding: 13px;
   width: 20%;
 }
-.list-info h3{
+.list-info h3 {
   margin-bottom: 17px;
 }
 .list-logo li {
