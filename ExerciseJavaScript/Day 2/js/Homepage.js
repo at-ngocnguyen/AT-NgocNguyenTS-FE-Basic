@@ -50,7 +50,7 @@ var products = [
   },
   {
     id: 8,
-    name: "BÔNG TAI VÀNG 18K ĐÍNH ĐÁ RUBY PNJ SẮC XUÂN RBXMY",
+    name: "GOLDEN EARRING 18K WITH RUBY STONE PNJ SPRING COLOR MOX",
     img: './img/anh8.jpg',
     price: 1298,
     description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
@@ -59,21 +59,6 @@ var products = [
 //loop and get object from array products
 products.forEach(getItem);
 
-function Comma(number) {
-  number = '' + number;
-  if (number.length > 3) {
-    var mod = number.length % 3;
-    var output = (mod > 0 ? (number.substring(0, mod)) : '');
-    for (i = 0; i < Math.floor(number.length / 3); i++) {
-      if ((mod == 0) && (i == 0))
-        output += number.substring(mod + 3 * i, mod + 3 * i + 3);
-      else
-        output += '.' + number.substring(mod + 3 * i, mod + 3 * i + 3);
-    }
-    return (output);
-  }
-  else return number;
-}
 function getItem(item, index) {
   var render = document.getElementById("js-list-product");
   //style div parent
@@ -121,17 +106,4 @@ function addCart(products) {
   }
   // item.disabled = true;
   localStorage.setItem('CART', JSON.stringify(cart));
-}
-function findProductInCart(cart, products) {
-  var index = -1;
-  console.log(cart)
-  if (cart.length > 0) {
-    for (var i = 0; i < cart.length; i++) {
-      if (cart[i].products.id === products.id) {
-        index = i;
-        break;
-      }
-    }
-  }
-  return index;
 }

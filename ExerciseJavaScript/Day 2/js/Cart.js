@@ -1,39 +1,12 @@
-var data = JSON.parse(localStorage.getItem('CART'))
-var cartItem = data ? data : [];
-var cart = cartItem;
+var data = []
+data = JSON.parse(localStorage.getItem('CART'))
+var table = document.getElementById("js-cart-item");
 var showCart = function () {
   data.forEach(getCart);
-}
-function showTotal() {
-  let total = 0;
-  if (cart.length > 0) {
-    for (var j = 0; j < cart.length; j++) {
-      total += data[j].products.price * data[j].count
-    }
-  }
-  // console.log(total)
-  var trtotal = document.createElement('tr');
-  var td = document.createElement('td');
-  td.setAttribute('colspan', '3');
-  var td2 = document.createElement('td');
-
-  var tdtotal1 = document.createElement('td');
-  tdtotal1.innerHTML = "Total";
-  var tdtotal2 = document.createElement('td');
-  tdtotal2.style.color = "red";
-  tdtotal2.innerHTML = Comma(total) + '<sup>$</sup>';
-
-  trtotal.appendChild(td);
-  trtotal.appendChild(tdtotal1);
-  trtotal.appendChild(tdtotal2);
-  trtotal.appendChild(td2);
-  // trtotal.appendChild(tdtotal2);
-  document.getElementById("js-cart-item").appendChild(trtotal);
 }
 function getCart(item, index) {
   // console.log(item)
   var product = item.products;
-  var table = document.getElementById("js-cart-item");
   var row = document.createElement('tr');
 
   //Create td
@@ -69,42 +42,54 @@ function getCart(item, index) {
   row.appendChild(td6);
   table.appendChild(row)
 }
+function showTotal() {
+  // console.log(data);
+  let total = 0;
+  if (data.length > 0) {
+    for (var j = 0; j < data.length; j++) {
+      total += data[j].products.price * data[j].count
+    }
+  }
+  // console.log(total)
+  var trtotal = document.createElement('tr');
+  var td = document.createElement('td');
+  td.setAttribute('colspan', '3');
+  var td2 = document.createElement('td');
+
+  var tdtotal1 = document.createElement('td');
+  tdtotal1.innerHTML = "Total";
+  var tdtotal2 = document.createElement('td');
+  tdtotal2.style.color = "red";
+  tdtotal2.innerHTML = Comma(total) + '<sup>$</sup>';
+
+  trtotal.appendChild(td);
+  trtotal.appendChild(tdtotal1);
+  trtotal.appendChild(tdtotal2);
+  trtotal.appendChild(td2);
+  // trtotal.appendChild(tdtotal2);
+  document.getElementById("js-cart-item").appendChild(trtotal);
+}
 function delItem(product) {
+  var backup = data;
+  var retVal = confirm("Do you want to delete ?");
   index = findProductInCart(data, product);
   // console.log(data);
-  if (index !== -1) {
-    data.splice(index, 1);
-  }
-  localStorage.setItem('CART', JSON.stringify(data));
-}
-function findProductInCart(cart, products) {
-  var index = -1;
-  // console.log(cart)
-  if (cart.length > 0) {
-    for (var i = 0; i < cart.length; i++) {
-      if (cart[i].products.id === products.id) {
-        index = i;
-        break;
-      }
+  if (retVal == true) {
+    if (index !== -1) {
+      data.splice(index, 1);
     }
+    localStorage.removeItem('CART');
+    localStorage.setItem('CART', JSON.stringify(backup));
+    table.removeChild();
+    showCart();
+    return true;
+  } else {
+    return false;
   }
-  return index;
-};
-function Comma(number) {
-  number = '' + number;
-  if (number.length > 3) {
-    var mod = number.length % 3;
-    var output = (mod > 0 ? (number.substring(0, mod)) : '');
-    for (i = 0; i < Math.floor(number.length / 3); i++) {
-      if ((mod == 0) && (i == 0))
-        output += number.substring(mod + 3 * i, mod + 3 * i + 3);
-      else
-        output += '.' + number.substring(mod + 3 * i, mod + 3 * i + 3);
-    }
-    return (output);
-  }
-  else return number;
+
 }
+
+// 
 window.onload = function () {
   showCart();
   showTotal();
