@@ -1,8 +1,8 @@
 var data = []
 data = JSON.parse(localStorage.getItem('CART'))
-var table = document.getElementById("js-cart-item");
-var tbody = document.getElementById("js-cart-list");
-var tfoot = document.getElementById("js-cart-bottom");
+var table = document.getElementById('js-cart-item');
+var tbody = document.getElementById('js-cart-list');
+var tfoot = document.getElementById('js-cart-bottom');
 var showCart = function () {
   data.forEach(getCart);
 }
@@ -10,7 +10,7 @@ function getCart(item, index) {
   var product = item.products;
   var row = document.createElement('tr');
   // var tbody = document.createElement('tbody');
-  tbody.classList.add("tbody_style")
+  tbody.classList.add('tbody_style')
   //Create td
   var td1 = document.createElement('td');
   td1.innerHTML = index + 1;
@@ -48,11 +48,17 @@ function getCart(item, index) {
 }
 function showTotal() {
   // console.log(tfoot);
-  let total = 0;
+  var total = 0;
+  var nonecart = document.createElement("td")
   if (data.length > 0) {
     for (var j = 0; j < data.length; j++) {
       total += data[j].products.price * data[j].count
     }
+
+  } else {
+    nonecart.colSpan = 6;
+    nonecart.innerHTML = '<h2>You don&rsquo;t have product in Cart, Please <a href="./home.html">click here</a> to continute</h2>'
+    tbody.appendChild(nonecart);
   }
   // console.log(total)
   var trtotal = document.createElement('tr');
@@ -61,9 +67,9 @@ function showTotal() {
   var td2 = document.createElement('td');
 
   var tdtotal1 = document.createElement('td');
-  tdtotal1.innerHTML = "Total";
+  tdtotal1.innerHTML = 'Total';
   var tdtotal2 = document.createElement('td');
-  tdtotal2.style.color = "red";
+  tdtotal2.style.color = 'red';
   tdtotal2.innerHTML = Comma(total) + '<sup>$</sup>';
 
   trtotal.appendChild(td);
@@ -74,7 +80,7 @@ function showTotal() {
   tfoot.appendChild(trtotal);
 }
 function delItem(product) {
-  var retVal = confirm("Do you want to delete ?");
+  var retVal = confirm('Do you want to delete ?');
   index = findProductInCart(data, product);
   console.log(shownumber());
   if (retVal == true) {

@@ -1,59 +1,59 @@
 var products = [
   {
     id: 1,
-    name: "GOLDEN WEDDING RINGS 18K PNJ DD00Y000737",
+    name: 'GOLDEN WEDDING RINGS 18K PNJ DD00Y000737',
     img: './img/anh1.jpg',
     price: 400,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 2,
-    name: "MEN RING 18K + RUBY PNJ RBXMY000598",
+    name: 'MEN RING 18K + RUBY PNJ RBXMY000598',
     img: './img/anh2.jpg',
     price: 1882,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 3,
-    name: "MEN RING 18K + RUBY PNJ RBXMY33598",
+    name: 'MEN RING 18K + RUBY PNJ RBXMY33598',
     img: './img/anh3.jpg',
     price: 742,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 4,
-    name: "GOLDEN RING 14K ",
+    name: 'GOLDEN RING 14K ',
     img: './img/anh4.jpg',
     price: 3535,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 5,
-    name: "DIAMON MAN RING WITH GOLD 18K PNJ DDDDC000504",
+    name: 'DIAMON MAN RING WITH GOLD 18K PNJ DDDDC000504',
     img: './img/anh5.jpg',
     price: 345,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 6,
-    name: "GOLDEN RING WITH WAROVSKI PNJ SPRING COLOR ",
+    name: 'GOLDEN RING WITH WAROVSKI PNJ SPRING COLOR ',
     img: './img/anh6.jpg',
     price: 975,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 7,
-    name: "GOLDEN EARRING 14K WITH MOON STONE PNJ SPRING COLOR MOX",
+    name: 'GOLDEN EARRING 14K WITH MOON STONE PNJ SPRING COLOR MOX',
     img: './img/anh7.jpg',
     price: 760,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
   {
     id: 8,
-    name: "GOLDEN EARRING 18K WITH RUBY STONE PNJ SPRING COLOR MOX",
+    name: 'GOLDEN EARRING 18K WITH RUBY STONE PNJ SPRING COLOR MOX',
     img: './img/anh8.jpg',
     price: 1298,
-    description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna",
+    description: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt t labore et dolore magna',
   },
 ]
 //loop and get object from array products
@@ -62,7 +62,7 @@ function showItem() {
 }
 
 function getItem(item, index) {
-  var render = document.getElementById("js-list-product");
+  var render = document.getElementById('js-list-product');
   //style div parent
   var div1 = document.createElement('div');
   div1.setAttribute('class', 'content');
@@ -103,7 +103,7 @@ function addCart(products) {
   var index = findProductInCart(cart, products);
   if (index !== -1) {
     cart[index].count += count;
-    document.getElementById("cart").innerHTML = ""
+    document.getElementById('cart').innerHTML = ''
 
   } else {
     cart.push({
@@ -111,8 +111,7 @@ function addCart(products) {
       count
     });
   }
-  document.getElementById("cart").innerHTML = '';
-  showItem();
+  document.getElementById('cart').innerHTML = '';
   shownumber();
   // item.disabled = true;
   localStorage.setItem('CART', JSON.stringify(cart));
