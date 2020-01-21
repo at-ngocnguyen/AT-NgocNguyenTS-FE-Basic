@@ -65,7 +65,7 @@ function getItem(item, index) {
   var render = document.getElementById('js-list-product');
   //style div parent
   var div1 = document.createElement('div');
-  div1.setAttribute('class', 'card');
+  div1.setAttribute('class', 'content');
   //style img
   var img = document.createElement('img');
   img.setAttribute('src', item.img)
@@ -76,12 +76,12 @@ function getItem(item, index) {
   h3.innerHTML = item.name;
   var p = document.createElement('p');
   p.innerHTML = Comma(item.price) + '<sup>$</sup>';
-  p.setAttribute('class', 'price');
+  p.setAttribute('class', 'content_item_price');
   var p_des = document.createElement('p');
   p_des.innerHTML = item.description;
   //button
   var button = document.createElement('button');
-  button.setAttribute('class', 'button');
+  button.setAttribute('class', 'js-button-addtocart btn-addtocart');
   button.innerHTML = 'Add to Cart';
   button.addEventListener('click', function () { addCart(item) })
   //structure content

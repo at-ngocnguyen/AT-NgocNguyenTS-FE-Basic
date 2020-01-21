@@ -1,11 +1,6 @@
 var data = JSON.parse(localStorage.getItem('CART'));
 var tbody = document.getElementById('js-cart-list');
-// var tfoot = document.getElementById('js-cart-bottom');
-var tfoot = document.createElement('tfoot');
-var table = document.getElementById('table');
-tfoot.id='js-cart-bottom';
-console.log(tfoot)
-
+var tfoot = document.getElementById('js-cart-bottom');
 var showCart = function () {
   data.forEach(getCart);
 }
@@ -73,11 +68,11 @@ function showTotal() {
   trtotal.appendChild(tdtotal2);
   trtotal.appendChild(td2);
   tfoot.appendChild(trtotal);
-  table.appendChild(tfoot)
 }
 function delItem(product) {
   var retVal = confirm('Do you want to delete ?');
   index = findProductInCart(data, product);
+  console.log(shownumber());
   if (retVal) {
     if (index !== -1) {
       data.splice(index, 1);
