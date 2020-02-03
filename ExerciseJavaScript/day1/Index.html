@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> JavaScript Day 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form class="container">
+    <h2>Exercise JavaScript Day 1</h2>
+    <hr />
+    <h4>Exercise1</h4>
+    <div class="form-group">
+      <label for="number1">First Number:</label>
+      <input type="number" class="form-control" id="number1" placeholder="Enter First Number" name="number1" required>
+    </div>
+    <p id="error1"></p>
+    <div class="form-group">
+      <label for="number2">Second Number :</label>
+      <input type="number" class="form-control" id="number2" placeholder="Enter Second Number" name="number2">
+    </div>
+    <div class="form-group">
+      <label for="result1"> Result :</label>
+      <input type="text" class="form-control" id="result1" name="result1" disabled>
+    </div>
+    <button type="submit" class="btn btn-default" id="ex1">Ex1</button>
+    <hr />
+  </form>
+
+  <form class="container">
+    <h4>Exercise2</h4>
+    <div class="form-group">
+      <label for="number">Number:</label>
+      <input type="number" class="form-control" id="number" placeholder="Enter  Number" name="number" required>
+    </div>
+    <div class="form-group">
+      <label for="result2"> Result :</label>
+      <input type="text" class="form-control" id="result2" name="result2" disabled>
+    </div>
+    <button type="submit" class="btn btn-default" id="ex2">Ex2</button>
+    <hr />
+  </form>
+
+  <form class="container">
+    <h4>Exercise3-Exercise4</h4>
+    <label for="string">String:</label>
+    <input type="text" class="form-control" id="string" placeholder="Enter  String" name="string" required>
+    <p id="error3"></p>
+    <div class="form-group">
+      <label for="result3"> Result :</label>
+      <input type="text" class="form-control" id="result3" name="result3" disabled>
+    </div>
+
+    <button type="submit" class="btn btn-default" id="ex3">Ex3</button>
+    <button type="submit" class="btn btn-default" id="ex4">Ex4</button>
+    <hr />
+  </form>
+ 
+
+  <script src="exercise.js"></script>
+</body>
+
+</html>
