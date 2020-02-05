@@ -5,38 +5,43 @@ var getUser = JSON.parse(localStorage.getItem('USER'));
 var dataUser = getUser ? getUser : [];
 
 function addComment() {
-  var nameUser = $('name').value;
-  var comment = $('comment').value;
-  var date = new Date();
-  var date_format = date.toLocaleTimeString();
-  var avatar = getUser ? getUser.avatar : './img/user/defaultUser.png';
-  var email = getUser ? getUser.email : 'somebody';
-  var sendComment = commentUser;
-  var id = commentUser.length + 1;
+  if (getUser) {
+    var nameUser = dataUser.name;
+    var comment = $('comment').value;
+    var date = new Date();
+    var date_format = date.toLocaleTimeString();
+    var avatar = getUser ? getUser.avatar : './img/user/defaultUser.png';
+    var email = getUser ? getUser.email : 'somebody';
+    var sendComment = commentUser;
+    var id = commentUser.length + 1;
 
-  var getComment = {
-    id: id,
-    name: nameUser,
-    avatar: avatar,
-    date: date_format,
-    content: comment,
-    email: email
-  }
+    var getComment = {
+      id: id,
+      name: nameUser,
+      avatar: avatar,
+      date: date_format,
+      content: comment,
+      email: email
+    }
 
-
-  if (nameUser && comment) {
-    sendComment.push(getComment)
-    localStorage.setItem('COMMENT', JSON.stringify(sendComment));
+    if (comment) {
+      sendComment.push(getComment)
+      localStorage.setItem('COMMENT', JSON.stringify(sendComment));
+    } else {
+      alert('Please fill out form comment');
+    }
+    div.innerHTML = '';
+    showTotal();
+    showComment();
+    if (!dataUser) {
+      $('name').value = '';
+    }
+    $('comment').value = '';
+    location.href = ('#form')
   } else {
-    alert('Please fill out form comment');
+    alert('Please Login to comment');
+    $('comment').value = '';
   }
-  div.innerHTML = '';
-  showTotal();
-  showComment();
-  if (!dataUser) {
-    $('name').value = '';
-  }
-  $('comment').value = '';
 }
 
 function showTotal() {
@@ -46,9 +51,7 @@ function showTotal() {
 }
 
 function showComment() {
-
   commentUser.forEach(renderComment);
-
 }
 function renderComment(item, index) {
   var checkAccount = showbuttondel(item);
@@ -89,7 +92,6 @@ function renderComment(item, index) {
   div2.appendChild(img);
   div2.appendChild(section);
   div.appendChild(div2);
-
 }
 function showbuttondel(item) {
   for (var i = 0; i < commentUser.length; i++) {

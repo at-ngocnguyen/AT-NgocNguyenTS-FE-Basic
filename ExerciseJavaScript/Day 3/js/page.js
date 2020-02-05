@@ -19,8 +19,6 @@ function checkLogin() {
   })
   if (data) {
     $('js-account').appendChild(aOUT);
-    $('name').value = data.name;
-    $('name').disabled = true;
   } else {
     $('js-account').appendChild(aIN);
   }
@@ -43,5 +41,6 @@ function findComment(data, comment) {
   }
   return index;
 }
+
 checkLogin();
 

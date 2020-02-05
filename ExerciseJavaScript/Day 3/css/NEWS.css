@@ -31,6 +31,10 @@ a {
 footer {
   margin-top: 50px;
 }
+.flex-space {
+  display: flex;
+  justify-content: space-around;
+}
 /*--NAVBAR--*/
 .header {
   padding-top: 20px;
@@ -141,6 +145,7 @@ footer {
 }
 
 /*------Comment------*/
+
 .comment {
   width: 50%;
   margin: auto;
@@ -151,9 +156,11 @@ form * {
 .comment-box {
   position: relative;
   display: flex;
-  padding: 1em;
+  align-items: center;
+  padding: 0.5em;
   padding-bottom: 0;
   margin-top: 1%;
+  margin-bottom: 1%;
   font-size: 1.2rem;
   border: solid #000 1px;
   border-radius: 5px;
@@ -180,9 +187,6 @@ form * {
   font-size: small;
 }
 
-.col-6 {
-  flex: 0 0 50%;
-}
 label {
   width: 100px;
   text-align: right;
@@ -191,6 +195,7 @@ label {
 }
 
 .btn {
+  width: 85px;
   float: right;
   padding: 12px 20px;
   border: none;
@@ -228,20 +233,24 @@ label {
   margin-bottom: 1rem;
 }
 .form-control {
-  display: block;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0;
   font-size: 1rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   outline: none;
 }
-input,
-textarea {
+.login input {
   width: 100%;
 }
-textarea .form-control {
-  height: auto;
+input {
+  width: calc(100% - 100px);
+  margin-right: auto;
+  padding-left: 10px;
+  border: 0;
+  outline: 0;
+  font-size: 1.2em;
 }
+
 .comment-content {
   width: 100%;
 }

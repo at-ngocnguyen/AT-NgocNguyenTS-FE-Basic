@@ -30,9 +30,6 @@ function Login() {
         localStorage.setItem('USER', JSON.stringify(userInfor));
         validate = true;
       }
-      else {
-        validate;
-      }
     }
     if (validate) {
       alert('Thank for Login');
