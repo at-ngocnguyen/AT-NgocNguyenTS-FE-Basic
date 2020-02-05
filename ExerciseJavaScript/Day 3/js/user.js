@@ -14,13 +14,13 @@ var users = [
 ]
 function Login() {
   var email = $('email').value;
-  var pass = $('email').value;
+  var pass = $('password').value;
+  var validate = false;
   console.log('abc')
   if (email && pass) {
     for (var i = 0; i < users.length; i++) {
       console.log(users[i])
-      if (email == users[i].email || pass == users[i].password) {
-        alert('Thank for LOGIN')
+      if (email === users[i].email && pass === users[i].password) {
         location.replace('./NEWS.html');
         var userInfor = {
           name: users[i].name,
@@ -28,10 +28,16 @@ function Login() {
           email: users[i].email
         };
         localStorage.setItem('USER', JSON.stringify(userInfor));
+        validate = true;
       }
       else {
-        alert('Email or Password was invalid')
+        validate;
       }
+    }
+    if (validate) {
+      alert('Thank for Login');
+    } else {
+      alert('Email or Password was invalid')
     }
   } else {
     alert('Please fill out form LOGIN')

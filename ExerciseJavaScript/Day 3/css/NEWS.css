@@ -153,7 +153,7 @@ form * {
   display: flex;
   padding: 1em;
   padding-bottom: 0;
-  margin-bottom: 1%;
+  margin-top: 1%;
   font-size: 1.2rem;
   border: solid #000 1px;
   border-radius: 5px;

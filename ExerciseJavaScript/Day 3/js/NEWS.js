@@ -1,7 +1,3 @@
-// var commentUser = [
-
-// ];
-
 var div = $('js-comment');
 var dataComment = JSON.parse(localStorage.getItem('COMMENT'));
 var commentUser = dataComment ? dataComment : [];
@@ -14,7 +10,6 @@ function addComment() {
   var date = new Date();
   var date_format = date.toLocaleTimeString();
   var avatar = getUser ? getUser.avatar : './img/user/defaultUser.png';
-  // console.log(avatar);
   var email = getUser ? getUser.email : 'somebody';
   var sendComment = commentUser;
   var id = commentUser.length + 1;
@@ -27,14 +22,13 @@ function addComment() {
     content: comment,
     email: email
   }
-  console.log(getComment)
-  sendComment.push(getComment)
+
+
   if (nameUser && comment) {
+    sendComment.push(getComment)
     localStorage.setItem('COMMENT', JSON.stringify(sendComment));
-    console.log('true');
   } else {
     alert('Please fill out form comment');
-    console.log('false')
   }
   div.innerHTML = '';
   showTotal();
@@ -52,12 +46,12 @@ function showTotal() {
 }
 
 function showComment() {
-  if (commentUser) {
-    commentUser.forEach(renderComment);
-  }
+
+  commentUser.forEach(renderComment);
+
 }
 function renderComment(item, index) {
-  // console.log(item.avatar)
+  var checkAccount = showbuttondel(item);
   var img = document.createElement('img');
   img.src = item.avatar;
   var section = document.createElement('section');
@@ -73,6 +67,9 @@ function renderComment(item, index) {
   icontrash.classList.add('fa-window-close');
   span.appendChild(icontrash);
   span.addEventListener('click', function () { delComment(item) });
+  if (!checkAccount) {
+    span.style.display = 'none';
+  }
 
   var p = document.createElement('p');
   p.classList.add('comment-body');
@@ -92,15 +89,15 @@ function renderComment(item, index) {
   div2.appendChild(img);
   div2.appendChild(section);
   div.appendChild(div2);
-  showbuttondel(item);
+
 }
 function showbuttondel(item) {
   for (var i = 0; i < commentUser.length; i++) {
     if (dataUser.email === item.email) {
-      // console.log('true');
+      return true;
     }
     else {
-      // console.log('false')
+      return false;
     }
   }
 
