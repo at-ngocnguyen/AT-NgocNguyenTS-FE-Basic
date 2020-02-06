@@ -39,8 +39,10 @@ function addComment() {
     $('comment').value = '';
     location.href = ('#form')
   } else {
-    alert('Please Login to comment');
-    $('comment').value = '';
+    var message = confirm('Please Log In to comment');
+    if (message) {
+      location.replace('./login.html')
+    }
   }
 }
 
@@ -71,7 +73,7 @@ function renderComment(item, index) {
   span.appendChild(icontrash);
   span.addEventListener('click', function () { delComment(item) });
   if (!checkAccount) {
-    span.style.display = 'none';
+    span.classList.add('display-none');
   }
 
   var p = document.createElement('p');

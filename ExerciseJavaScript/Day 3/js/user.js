@@ -16,7 +16,6 @@ function Login() {
   var email = $('email').value;
   var pass = $('password').value;
   var validate = false;
-  console.log('abc')
   if (email && pass) {
     for (var i = 0; i < users.length; i++) {
       console.log(users[i])

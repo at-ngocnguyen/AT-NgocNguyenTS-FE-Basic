@@ -5,85 +5,30 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/NEWS.css">
+  <link rel="stylesheet" href="./css/Login.css">
   <title>LOGIN</title>
 </head>
 
 <body>
-  <header class="header">
-    <img src="./img/logo.png">
-    <nav class="navbar">
-      <ul class="menu-list">
-        <li class="list-item"><a href="./NEWS.html">HOME</a></li>
-        <li class="list-item"><a href="#">ABOUT US</a></li>
-        <li class="list-item"><a href="#">CONTACT US</a></li>
-        <li class="list-item"><a href="#">NEWS</a></li>
-      </ul>
-    </nav>
-    <div class="account" id="js-account">
-      <a href="./login.html">Login</a>
+
+  <main class="background-login">
+    <div class="wrapper">
+      <div id="formContent">
+        <h2  id="js-account" class="active header"></h2>
+        <div class="fadeIn first">
+          <img src="./img/logo.png" class="icon" id="icon" alt="User Icon" />
+        </div>
+        <!-- <img id="icon"> -->
+        <form id="form">
+          <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
+          <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+          <input type="submit" class="fadeIn fourth" id="js-login" value="Log In">
+        </form>
+
+      </div>
     </div>
-  </header>
-  <main>
-    <div class="title container">
-      <h1>What Will Be Will Be</h1>
-    </div>
-    <section class="login">
-      <h1>LOGIN</h1>
-      <form id="form">
-        <label>
-          Email :
-        </label>
-        <input type="email" id="email" name="email" class="form-control">
-        <label>
-          Password :
-        </label>
-        <input type="password" id="password" name="password" class="form-control"><br>
-        <button type="submit" id="js-login" class="btn btn-primary"><span>LOGIN</span></button>
-      </form>
-    </section>
   </main>
-  <footer class="footer">
-    <section class="info">
-      <div class="list-info">
-        <h3>ABOUT US</h3>
-        <ul>
-          <li><a href="#">GENERAL INTRODUCTION</a> </li>
-          <li><a href="#">HUMAN</a></li>
-          <li><a href="#">FACILITIES AND FACILITIES</a></li>
-        </ul>
-      </div>
-      <div class="list-info">
-        <h3>SUPPORT</h3>
-        <ul>
-          <li><a href="#">HEALTH COUSELING</a></li>
-          <li><a href="#">REGULAR MEDICINE</a></li>
-          <li><a href="#">SCHEDULE APPOINTMENTS</a></li>
-        </ul>
-      </div>
-      <div class="list-info">
-        <h3>SOCIAL CONNECTION</h3>
-        <ul class="list-logo">
-          <li>
-            <img src="./img/iconFB.png" />
-            <a href="#">Facebook</a>
-          </li>
-          <li>
-            <img src="./img/iconGG.png" />
-            <a href="#">Google+</a>
-          </li>
-          <li>
-            <img src="./img/iconYB.png" />
-            <a href="#">Youtube</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="copyright">
-      <p>&copy; 2018 - COPYRIGHT OF SPECIALIZED CLINIC</p>
-      <p>DESIGN BY</p>
-      <p>KID</p>
-    </section>
-  </footer>
+
   <script src="./js/page.js"></script>
   <script src="./js/user.js"></script>
 </body>

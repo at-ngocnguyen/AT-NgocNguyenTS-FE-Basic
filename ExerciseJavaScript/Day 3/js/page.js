@@ -6,28 +6,31 @@ $('form').addEventListener('submit', function (event) {
 })
 function checkLogin() {
   var data = JSON.parse(localStorage.getItem('USER'));
-  // var datacomment = JSON.parse(localStorage.getItem('COMMENT'));
   var aIN = document.createElement('a');
-  aIN.innerHTML = 'LOGIN';
-  aIN.classList.add('account')
+  aIN.innerHTML = 'LOG IN';
   aIN.href = './login.html';
+  var aSign = document.createElement('a');
+  aSign.innerHTML = 'SIGN IN';
+  aSign.href = './signin.html';
   var aOUT = document.createElement('a');
-  aOUT.innerHTML = 'LOGOUT'
-  aOUT.classList.add('account')
+  aOUT.innerHTML = 'LOG OUT'
   aOUT.addEventListener('click', function () {
     Logout();
   })
+
   if (data) {
+    var span = document.createElement('span');
+    span.innerHTML = 'Hi - ' + data.name;
+    $('js-account').appendChild(span);
     $('js-account').appendChild(aOUT);
   } else {
     $('js-account').appendChild(aIN);
+    $('js-account').appendChild(aSign);
   }
- 
 }
 function Logout() {
   localStorage.removeItem('USER');
   location.replace('./NEWS.html');
-  console.log('abc')
 }
 function findComment(data, comment) {
   var index = -1;
