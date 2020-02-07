@@ -1,5 +1,25 @@
+var users = [
+  {
+    email: 'thieunguyen@gmail.com',
+    password: '123123123',
+    name: 'THIEU NGUYEN',
+    avatar: './img/user/thieu.png',
+  },
+  {
+    email: 'tannguyen@gmail.com',
+    password: '123123123',
+    name: 'TAN NGUYEN',
+    avatar: './img/user/tan.png',
+  }
+]
 var $ = function (id) {
   return document.getElementById(id);
+}
+var user = JSON.parse(localStorage.getItem('DATAUSER'));
+function dataUser() {
+  if (!user) {
+    localStorage.setItem('DATAUSER', JSON.stringify(users));
+  }
 }
 $('form').addEventListener('submit', function (event) {
   event.preventDefault();
@@ -46,4 +66,4 @@ function findComment(data, comment) {
 }
 
 checkLogin();
-
+dataUser();

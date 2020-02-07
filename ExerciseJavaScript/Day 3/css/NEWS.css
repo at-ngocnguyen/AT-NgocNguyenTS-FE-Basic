@@ -121,9 +121,7 @@ footer {
   justify-content: center;
 }
 .list-icon i {
-  font-size: 1rem;
   color: white;
-  padding-left: 5px;
 }
 .share .list-icon li {
   margin-right: 5px;
@@ -226,12 +224,7 @@ form * {
   font-size: small;
 }
 
-label {
-  width: 100px;
-  text-align: right;
-  padding-right: 10px;
-  font-size: 1.5rem;
-}
+
 .flex-space .btn {
   width: 95px;
 }
@@ -245,7 +238,7 @@ label {
 }
 .btn-primary {
   color: white;
-  background-color: #39ace7;
+  background-color: #f26522;
 }
 .btn span {
   cursor: pointer;

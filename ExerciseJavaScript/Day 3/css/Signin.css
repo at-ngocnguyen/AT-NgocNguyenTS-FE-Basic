@@ -1,0 +1,32 @@
+input[type="file"] {
+  display: none;
+}
+.form-header{
+  display: flex;
+  justify-content: center;
+}
+.custom-file-upload {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  line-height: 120px;
+  text-align: center;
+
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.img-user {
+  width: 120px;
+  height: 120px;
+  border: solid #ccc 1px;
+  border-radius: 50%;
+}
+.img-user-content {
+  position: absolute;
+  font-size: 5rem;
+  opacity: 0;
+}
+.img-user-content:hover {
+  opacity: 1;
+  color: #56baed;
+}

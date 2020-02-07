@@ -5,16 +5,15 @@ var getUser = JSON.parse(localStorage.getItem('USER'));
 var dataUser = getUser ? getUser : [];
 
 function addComment() {
+  var nameUser = dataUser.name;
+  var comment = $('comment').value;
+  var date = new Date();
+  var date_format = date.toLocaleTimeString();
+  var avatar = getUser ? getUser.avatar : './img/user/defaultUser.png';
+  var email = getUser ? getUser.email : 'somebody';
+  var sendComment = commentUser;
+  var id = commentUser.length + 1;
   if (getUser) {
-    var nameUser = dataUser.name;
-    var comment = $('comment').value;
-    var date = new Date();
-    var date_format = date.toLocaleTimeString();
-    var avatar = getUser ? getUser.avatar : './img/user/defaultUser.png';
-    var email = getUser ? getUser.email : 'somebody';
-    var sendComment = commentUser;
-    var id = commentUser.length + 1;
-
     var getComment = {
       id: id,
       name: nameUser,
