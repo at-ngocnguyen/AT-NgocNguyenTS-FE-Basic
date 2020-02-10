@@ -61,6 +61,7 @@ function showItem() {
   products.forEach(getItem);
 }
 
+var data = JSON.parse(localStorage.getItem('CART'))
 function getItem(item, index) {
   var render = document.getElementById('js-list-product');
   //style div parent
@@ -75,7 +76,7 @@ function getItem(item, index) {
   var h3 = document.createElement('h3');
   h3.innerHTML = item.name;
   var p = document.createElement('p');
-  p.innerHTML = Comma(item.price) + '<sup>$</sup>';
+  p.innerHTML = comMa(item.price) + '<sup>$</sup>';
   p.setAttribute('class', 'price');
   var p_des = document.createElement('p');
   p_des.innerHTML = item.description;
@@ -95,7 +96,6 @@ function getItem(item, index) {
 }
 //Add to cart
 function addCart(products) {
-  var data = JSON.parse(localStorage.getItem('CART'))
   var cartItem = data ? data : [];
   var cart = cartItem;
   var count = 1;

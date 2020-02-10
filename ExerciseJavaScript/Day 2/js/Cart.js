@@ -1,10 +1,10 @@
-var data = JSON.parse(localStorage.getItem('CART'));
+var getCartdata = JSON.parse(localStorage.getItem('CART'));
+var data = getCartdata ? getCartdata : [];
 var tbody = document.getElementById('js-cart-list');
 // var tfoot = document.getElementById('js-cart-bottom');
 var tfoot = document.createElement('tfoot');
 var table = document.getElementById('table');
-tfoot.id='js-cart-bottom';
-console.log(tfoot)
+tfoot.id = 'js-cart-bottom';
 
 var showCart = function () {
   data.forEach(getCart);
@@ -24,9 +24,9 @@ function getCart(item, index) {
   span.innerHTML = item.count;
   td3.appendChild(span);
   var td4 = document.createElement('td');
-  td4.innerHTML = Comma(product.price) + '<sup>$</sup>';
+  td4.innerHTML = comMa(product.price) + '<sup>$</sup>';
   var td5 = document.createElement('td');
-  td5.innerHTML = Comma(product.price * item.count) + '<sup>$</sup>';
+  td5.innerHTML = comMa(product.price * item.count) + '<sup>$</sup>';
   var td6 = document.createElement('td');
   //Create Button Delete
   var buttondel = document.createElement('button');
@@ -66,7 +66,7 @@ function showTotal() {
   tdtotal1.innerHTML = 'Total';
   var tdtotal2 = document.createElement('td');
   tdtotal2.style.color = 'red';
-  tdtotal2.innerHTML = Comma(total) + '<sup>$</sup>';
+  tdtotal2.innerHTML = comMa(total) + '<sup>$</sup>';
 
   trtotal.appendChild(td);
   trtotal.appendChild(tdtotal1);

@@ -20,7 +20,7 @@ function findProductInCart(cart, products) {
   }
   return index;
 }
-function Comma(number) {
+function comMa(number) {
   number = '' + number;
   if (number.length > 3) {
     var mod = number.length % 3;
