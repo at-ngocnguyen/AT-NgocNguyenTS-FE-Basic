@@ -1,4 +1,5 @@
 var data = JSON.parse(localStorage.getItem('DATAUSER'));
+
 function signIn() {
   var name = $('name').value;
   var email = $('email').value;
@@ -24,6 +25,7 @@ function signIn() {
     alert('Form Sign in was invalid');
   }
 }
+
 function checkSignin(name, email, password, repass) {
   var validate = true;
   var checkData = data ? data : [];
@@ -40,6 +42,7 @@ function checkSignin(name, email, password, repass) {
   }
   return validate;
 }
+
 function getLink() {
   $('js-img').src = './img/user/defaultUser.png';
   document.querySelector('input[type="file"]').addEventListener('change', function () {
@@ -48,6 +51,7 @@ function getLink() {
     }
   });
 }
+
 window.onload = function () {
   $('js-login').onclick = signIn;
   getLink();

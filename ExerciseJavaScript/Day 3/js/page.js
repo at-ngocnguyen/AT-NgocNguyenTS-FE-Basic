@@ -10,12 +10,20 @@ var users = [
     password: '123123123',
     name: 'TAN NGUYEN',
     avatar: './img/user/tan.png',
+  },
+  {
+    email: 'nguyenthusongngoc@gmail.com',
+    password: '123123123',
+    name: 'NGOC NGUYEN',
+    avatar: './img/user/defaultUser.png',
   }
 ]
 var $ = function (id) {
   return document.getElementById(id);
 }
+
 var user = JSON.parse(localStorage.getItem('DATAUSER'));
+
 function dataUser() {
   if (!user) {
     localStorage.setItem('DATAUSER', JSON.stringify(users));
@@ -24,6 +32,7 @@ function dataUser() {
 $('form').addEventListener('submit', function (event) {
   event.preventDefault();
 })
+
 function checkLogin() {
   var data = JSON.parse(localStorage.getItem('USER'));
   var aIN = document.createElement('a');
@@ -33,7 +42,10 @@ function checkLogin() {
   aSign.innerHTML = 'SIGN IN';
   aSign.href = './signin.html';
   var aOUT = document.createElement('a');
-  aOUT.innerHTML = 'LOG OUT'
+  var i = document.createElement('i');
+  i.classList.add('fa');
+  i.classList.add('fa-sign-out');
+  aOUT.appendChild(i);
   aOUT.addEventListener('click', function () {
     Logout();
   })
@@ -48,11 +60,13 @@ function checkLogin() {
     $('js-account').appendChild(aSign);
   }
 }
+
 function Logout() {
   localStorage.removeItem('USER');
   location.replace('./NEWS.html');
 }
-function findComment(data, comment) {
+func
+tion findComment(data, comment) {
   var index = -1;
   if (data.length > 0) {
     for (var i = 0; i < data.length; i++) {

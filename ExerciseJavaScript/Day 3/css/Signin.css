@@ -1,7 +1,7 @@
 input[type="file"] {
   display: none;
 }
-.form-header{
+.form-header {
   display: flex;
   justify-content: center;
 }
@@ -28,4 +28,10 @@ input[type="file"] {
 .img-user-content:hover {
   opacity: 1;
   color: #56baed;
+}
+#formContent .active a:last-child {
+  color: #56baed;
+}
+#formContent .active a:first-child {
+  color: #000;
 }

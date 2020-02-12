@@ -54,6 +54,7 @@ function showTotal() {
 function showComment() {
   commentUser.forEach(renderComment);
 }
+
 function renderComment(item, index) {
   var checkAccount = showbuttondel(item);
   var img = document.createElement('img');
@@ -94,6 +95,7 @@ function renderComment(item, index) {
   div2.appendChild(section);
   div.appendChild(div2);
 }
+
 function showbuttondel(item) {
   for (var i = 0; i < commentUser.length; i++) {
     if (dataUser.email === item.email) {
@@ -103,8 +105,8 @@ function showbuttondel(item) {
       return false;
     }
   }
-
 }
+
 function delComment(comment) {
   var retVal = confirm('Do you want to delete ?');
   var index = findComment(commentUser, comment);

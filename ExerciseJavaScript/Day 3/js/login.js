@@ -13,7 +13,6 @@ function Login() {
         };
         localStorage.setItem('USER', JSON.stringify(userInfor));
         validate = true;
-        console.log(validate)
       }
     }
     if (validate) {
@@ -25,10 +24,12 @@ function Login() {
     alert('Please fill out form LOGIN')
   }
 }
+
 function Logout() {
   localStorage.removeItem('USER');
   location.replace('./NEWS.html');
 }
+
 window.onload = function () {
   $('js-login').onclick = Login;
 }

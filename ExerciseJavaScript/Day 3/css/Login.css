@@ -68,7 +68,9 @@ h2.active {
 }
 
 /* FORM TYPOGRAPHY*/
-
+.header a:first-child {
+  color: #56baed;
+}
 input[type="submit"] {
   background-color: #56baed;
   border: none;
