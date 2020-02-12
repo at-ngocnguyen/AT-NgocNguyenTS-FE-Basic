@@ -65,8 +65,7 @@ function Logout() {
   localStorage.removeItem('USER');
   location.replace('./NEWS.html');
 }
-func
-tion findComment(data, comment) {
+function findComment(data, comment) {
   var index = -1;
   if (data.length > 0) {
     for (var i = 0; i < data.length; i++) {

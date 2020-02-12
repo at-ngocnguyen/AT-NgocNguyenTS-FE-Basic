@@ -21,6 +21,7 @@ ul li {
 }
 
 .container {
+  margin-top: 50px;
   padding: 0 200px 0 200px;
 }
 .clr:after {
@@ -114,13 +115,7 @@ html {
   border-radius: 10px;
 }
 /*----Content----*/
-.title {
-  border-top: solid #999 1px;
-  border-bottom: solid #999 1px;
-  height: 20vh;
-  line-height: 20vh;
-  margin-top: 20px;
-}
+
 .content {
   width: 40%;
   margin: 50px auto;
