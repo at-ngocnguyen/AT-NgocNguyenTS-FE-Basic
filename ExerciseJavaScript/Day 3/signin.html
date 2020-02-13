@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/NEWS.css">
+  <link rel="stylesheet" href="./css/Login.css">
+  <link rel="stylesheet" href="./css/Signin.css">
+  <title>SIGN IN</title>
+</head>
+
+<body>
+
+  <main class="background-login">
+    <div class="wrapper">
+      <div id="formContent">
+        <div class="logo">
+          <a href="./NEWS.html">
+            <img src="./img/logo.png" class="icon" id="icon" alt="User Icon" />
+          </a>
+        </div>
+        <h2 id="js-account" class="active header"></h2>
+        <div class="form-header">
+          <label for="file-upload" class="custom-file-upload">
+            <img class="img-user" id="js-img" alt="">
+            <p class="img-user-content"><i class="fa fa-camera-retro"></i></p>
+          </label>
+          <input id="file-upload" type="file" />
+          
+        </div>
+        <form id="form">
+          <input type="text" id="name" name="name" placeholder="Name">
+          <input type="text" id="email" name="email" placeholder="Email">
+          <input type="password" id="password" name="login" placeholder="Password">
+          <input type="password" id="re-password" name="login" placeholder="Re-Password">
+          <input type="submit"  id="js-login" value="Sign In">
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/page.js"></script>
+  <script src="./js/signin.js"></script>
+</body>
+
+</html>
