@@ -42,10 +42,13 @@ function checkLogin() {
   aSign.innerHTML = 'SIGN IN';
   aSign.href = './signin.html';
   var aOUT = document.createElement('a');
+  var spanOUT = document.createElement('span');
+  spanOUT.innerHTML = 'Logout'
   var i = document.createElement('i');
   i.classList.add('fa');
   i.classList.add('fa-sign-out');
   aOUT.appendChild(i);
+  aOUT.appendChild(spanOUT);
   aOUT.addEventListener('click', function () {
     Logout();
   })

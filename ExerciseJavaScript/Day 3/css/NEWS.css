@@ -108,11 +108,14 @@ html {
   border-radius: 5px;
   color: #fff;
 }
-.account span {
+.account span:first-child {
   margin-right: 3px;
   padding: 10px;
   border: solid #999 1px;
   border-radius: 10px;
+}
+.fa-sign-out {
+  margin-right: 5px;
 }
 /*----Content----*/
 
@@ -298,7 +301,6 @@ input {
 /*---Footer---*/
 .footer-distributed {
   background-color: #39ace7;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
   text-align: left;
