@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.container {
+  padding: 5% 10%;
+}
+
+.item-link {
+  display: block;
+  color: $border;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}

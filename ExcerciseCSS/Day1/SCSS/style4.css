@@ -1,0 +1,207 @@
+.contact, .logo, .head-nav, .banner-absolute, .list-info ul li, .copyright, .listbox {
+  display: flex;
+  align-items: center; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; }
+
+.container {
+  padding: 5% 10%; }
+
+.item-link {
+  display: block;
+  color: #b3b3b3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+.header-health {
+  width: 100%; }
+
+.contact {
+  text-align: right;
+  width: 20%; }
+  .contact span {
+    color: #4cc1fc; }
+  .contact img {
+    margin-right: 2%; }
+
+.head-logo {
+  display: flex;
+  border-bottom: solid 1px #b3b3b3;
+  padding: 1% 10% 1% 10%; }
+
+.logo {
+  margin-right: auto;
+  justify-content: center; }
+  .logo img {
+    margin-right: 2%; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+.header-navbar {
+  overflow: hidden;
+  list-style-type: none; }
+  .header-navbar li {
+    border-left: solid 1px #b3b3b3;
+    float: left;
+    margin: 0; }
+    .header-navbar li:first-child {
+      border: 0; }
+
+li a {
+  display: block;
+  color: #b3b3b3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+.title {
+  width: 18em; }
+
+.head-nav {
+  padding: 0 10%; }
+  .head-nav nav {
+    margin-right: auto; }
+
+header a:hover {
+  color: #62c6f8; }
+
+.head-nav {
+  padding: 0 10%; }
+  .head-nav nav {
+    margin-right: auto; }
+
+header a:hover {
+  color: #62c6f8; }
+
+.banner-relative {
+  position: relative; }
+
+.banner-absolute {
+  position: absolute;
+  padding-left: 10%;
+  top: 0;
+  height: 100%; }
+
+.banner img {
+  width: 100%; }
+.banner a {
+  text-decoration: none;
+  color: #000000; }
+
+.page-sidebar {
+  margin-right: 2%;
+  float: left;
+  width: 30%; }
+
+.list-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 68%; }
+
+.content {
+  width: 31%;
+  margin-right: 2%;
+  border: solid 1px #d9d9d9;
+  margin-bottom: 2%; }
+
+.content_item {
+  width: 80%;
+  margin: auto; }
+
+img[src="./img/muiten.jpg"] {
+  float: right; }
+
+.img-100 {
+  width: 100%; }
+
+.footer {
+  padding: 2% 0 0 0;
+  background-color: #62c6f8;
+  color: #ffffff; }
+
+.list-info ul {
+  list-style-position: inside; }
+.list-info a {
+  vertical-align: middle; }
+
+.info {
+  display: flex;
+  justify-content: space-around; }
+  .info a {
+    color: #ffffff;
+    margin: 0;
+    text-decoration: none; }
+
+.copyright {
+  padding: 0 5% 0 10%;
+  border-top: 1px solid #ffffff;
+  color: #ffffff;
+  height: 3em; }
+  .copyright p:first-child {
+    margin-right: auto; }
+  .copyright span {
+    color: #7df1cf; }
+
+.page-sidebar {
+  margin-right: 2%;
+  float: left;
+  width: 30%; }
+
+.book-schedule form {
+  text-align: center;
+  padding: 5%;
+  background-color: #d9e4e9; }
+  .book-schedule form input {
+    margin: 2% 0 2% 0;
+    height: 2.5em;
+    width: 90%;
+    border: 0; }
+  .book-schedule form button {
+    margin-top: 2%;
+    width: 8em;
+    height: 3em;
+    background-color: #29a329;
+    border: 0;
+    color: #ffffff; }
+
+input[type="date"] {
+  position: relative; }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1; }
+  input[type="date"]:before {
+    color: transparent;
+    display: block;
+    font-family: "FontAwesome";
+    content: "\f073";
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    color: #999999; }
+
+.list-item ul {
+  list-style-position: inside;
+  padding-left: 5%; }
+.list-item li {
+  margin-bottom: 5%; }
+  .list-item li a {
+    display: inline; }
+.list-item a {
+  text-align: left;
+  color: #000000; }
+
+.listbox {
+  background-color: #d9e4e9;
+  height: 3em;
+  margin-bottom: 1em;
+  padding-left: 2%; }
+
+/*# sourceMappingURL=style4.css.map */

@@ -1,0 +1,74 @@
+.header-health {
+  width: 100%;
+}
+
+.contact {
+  @extend %flex-item;
+  text-align: right;
+  width: 20%;
+
+  span {
+    color: #4cc1fc;
+  }
+
+  img {
+    margin-right: 2%;
+  }
+}
+
+.head-logo {
+  display: flex;
+  border-bottom: solid 1px $border;
+  padding: 1% 10% 1% 10%;
+}
+
+.logo {
+  margin-right: auto;
+  @extend %flex-item;
+  justify-content: center;
+  img {
+    margin-right: 2%;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header-navbar {
+  overflow: hidden;
+  list-style-type: none;
+  li {
+    border-left: solid 1px $border;
+    float: left;
+    margin: 0;
+    &:first-child {
+      border: 0;
+    }
+  }
+}
+
+li a {
+  display: block;
+  color: $border;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.title {
+  width: 18em;
+}
+
+.head-nav {
+  @extend %flex-item;
+  padding: 0 10%;
+  nav {
+    margin-right: auto;
+  }
+}
+
+header a:hover {
+  color: $primary;
+}

@@ -1,0 +1,25 @@
+.list-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 68%;
+}
+
+.content {
+  width: 31%;
+  margin-right: 2%;
+  border: solid 1px $light-grey2;
+  margin-bottom: 2%;
+}
+
+.content_item {
+  width: 80%;
+  margin: auto;
+}
+
+img[src="./img/muiten.jpg"] {
+  float: right;
+}
+
+.img-100 {
+  width: 100%;
+}
