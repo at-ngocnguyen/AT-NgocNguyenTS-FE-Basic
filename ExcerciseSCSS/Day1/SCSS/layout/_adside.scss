@@ -1,0 +1,99 @@
+.page-sidebar {
+  font-family: "utm-avo";
+  float: left;
+  width: 23%;
+  margin-right: 20px;
+}
+
+.book-schedule {
+  margin-top: 45px;
+  padding: 18px;
+  background-color: #d9e4e9;
+  form {
+    text-align: center;
+    input {
+      margin: 0px 0 15px 0;
+      height: 38px;
+      width: 100%;
+      border: 0;
+    }
+    button {
+      margin-top: 2px;
+      font-family: "utm-avo-bold";
+      font-size: 14px;
+      width: 125px;
+      height: 47px;
+      background-color: $green;
+      border: 0;
+      color: $white;
+    }
+  }
+  h3 {
+    text-align: left;
+  }
+}
+
+.book-content {
+  h3 {
+    font-family: "utm-avo-bold";
+    padding-top: 3px;
+    font-size: 15px;
+  }
+}
+input[type="date"] {
+  position: relative;
+  &::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+  }
+  &:before {
+    color: transparent;
+    display: block;
+    font-family: "FontAwesome";
+    content: "\f073";
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    color: $grey;
+  }
+}
+
+.listbox-content {
+  font-size: 14px;
+}
+
+.list-item {
+  ul {
+    padding-left: 17px;
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 13px;
+    font-size: 12px;
+    a {
+      display: inline;
+      margin-left: -6px;
+    }
+  }
+  a {
+    text-align: left;
+    color: $black;
+  }
+}
+
+.listbox {
+  @extend %flex-item;
+  background-color: $light-grey;
+  margin-bottom: 19px;
+  padding-left: 15px;
+  background-color: $light-grey;
+  height: 3em;
+}
+
+.line {
+  background-color: $primary;
+  margin: 21px 0 17px 0;
+  height: 3px;
+  width: 66px;
+}
