@@ -19,7 +19,7 @@
   }
 }
 
-.list-logo { 
+.list-logo {
   li {
     @extend %flex-item;
   }
@@ -49,7 +49,7 @@
   height: 58px;
   font-family: "utm-avo";
   font-size: 13px;
-  padding: 0px 180px 0px 180px;
+  padding: 0px 180px;
   p {
     &:first-child {
       margin-right: auto;
