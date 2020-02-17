@@ -1,6 +1,15 @@
+%flex-item {
+  display: flex;
+  align-items: center;
+}
+@mixin margin-right($leng) {
+  margin-right: $leng;
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  outline: none;
 }
 
 .header-health {
@@ -8,18 +17,17 @@
 }
 
 .contact {
-  display: flex;
-  align-items: center;
+  @extend %flex-item;
   text-align: right;
   width: 20%;
-}
 
-.contact span {
-  color: #4cc1fc;
-}
+  span {
+    color: #4cc1fc;
+  }
 
-.contact img {
-  margin-right: 2%;
+  img {
+    @include margin-right(2%);
+  }
 }
 
 .head-logo {
@@ -29,14 +37,12 @@
 }
 
 .logo {
-  display: flex;
+  @include margin-right(auto);
+  @extend %flex-item;
   justify-content: center;
-  align-items: center;
-  margin-right: auto;
-}
-
-.logo img {
-  margin-right: 2%;
+  img {
+    @include margin-right(2%);
+  }
 }
 
 ul {
@@ -47,16 +53,16 @@ ul {
 .header-navbar {
   overflow: hidden;
   list-style-type: none;
-}
 
-.header-navbar li {
-  border-left: solid 1px #b3b3b3;
-  float: left;
-  margin: 0;
-}
+  li {
+    border-left: solid 1px #b3b3b3;
+    float: left;
+    margin: 0;
 
-.header-navbar li:first-child {
-  border: 0;
+    &:first-child {
+      border: 0;
+    }
+  }
 }
 
 li a {
@@ -68,13 +74,12 @@ li a {
 }
 
 .head-nav {
-  display: flex;
-  align-items: center;
-  padding: 0 10% 0 10%;
-}
+  @extend %flex-item;
+  padding: 0 10%;
 
-.head-nav nav {
-  margin-right: auto;
+  nav {
+    @include margin-right(auto);
+  }
 }
 
 header a:hover {
@@ -86,43 +91,45 @@ header a:hover {
 }
 
 .banner-absolute {
-  padding-left: 10%;
+  @extend %flex-item;
   position: absolute;
+  padding-left: 10%;
   top: 0;
   height: 100%;
-  display: flex;
-  align-items: center;
+  
 }
 
-.banner img {
-  width: 100%;
-}
+.banner {
+  img {
+    width: 100%;
+  }
 
-.banner a {
-  text-decoration: none;
-  color: #000000;
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
 }
 
 .container {
-  padding: 5% 10% 5% 10%;
+  padding: 5% 10%;
 }
 
 .page-sidebar {
+  @include margin-right(2%);
   float: left;
   width: 30%;
-  margin-right: 2%;
 }
 
 .copyright {
   padding: 0 5% 0 10%;
-}
 
-.copyright p:first-child {
-  margin-right: auto;
-}
+  p:first-child {
+    @include margin-right(auto);
+  }
 
-.copyright span {
-  color: #7df1cf;
+  span {
+    color: #7df1cf;
+  }
 }
 
 .book-schedule form {
@@ -140,24 +147,24 @@ form input {
 
 input[type="date"] {
   position: relative;
-}
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  color: transparent;
-  background: none;
-  z-index: 1;
-}
+  &::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+  }
 
-input[type="date"]:before {
-  color: transparent;
-  background: none;
-  display: block;
-  font-family: "FontAwesome";
-  content: "\f073";
-  position: absolute;
-  top: 10px;
-  right: 6px;
-  color: #999;
+  &:before {
+    color: transparent;
+    background: none;
+    display: block;
+    font-family: "FontAwesome";
+    content: "\f073";
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    color: #999;
+  }
 }
 
 form button {
@@ -197,70 +204,74 @@ img[src="./img/muiten.jpg"] {
 }
 
 /*-----aside-----*/
+
 .listbox {
+  @extend %flex-item;
   background-color: #d9e4e9;
   height: 3em;
-  display: flex;
-  align-items: center;
   margin-bottom: 1em;
   padding-left: 2%;
 }
 
-.list-item ul {
-  list-style-position: inside;
-  padding-left: 5%;
-}
+.list-item {
+  ul {
+    list-style-position: inside;
+    padding-left: 5%;
+  }
 
-.list-item li {
-  margin-bottom: 5%;
-}
+  li {
+    margin-bottom: 5%;
 
-.list-item li a {
-  display: inline;
-}
+    a {
+      display: inline;
+    }
+  }
 
-.list-item a {
-  text-align: left;
-  color: #000000;
+  a {
+    text-align: left;
+    color: #000000;
+  }
 }
 
 /* footer */
+
 .footer {
   padding: 2% 0 0 0;
   background-color: #62c6f8;
   color: white;
 }
 
-.list-info ul {
-  list-style-position: inside;
-}
+.list-info {
+  ul {
+    list-style-position: inside;
 
-.list-info ul li {
-  display: flex;
-  align-items: center;
-}
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
 
-.list-info a {
-  vertical-align: middle;
+  a {
+    vertical-align: middle;
+  }
 }
 
 .info {
   display: flex;
   justify-content: space-around;
-}
 
-.info a {
-  color: white;
-  display: inline;
-  margin: 0;
-  text-decoration: none;
+  a {
+    color: white;
+    display: inline;
+    margin: 0;
+    text-decoration: none;
+  }
 }
 
 .copyright {
+  @extend %flex-item;
   border-top: 1px solid white;
   color: white;
-  display: flex;
-  align-items: center;
   height: 3em;
 }
 
