@@ -64,7 +64,7 @@ ul {
 .head-logo {
   display: flex;
   justify-content: space-between;
-  padding: 10px 179px 16px 179px; }
+  padding: 10px 0 16px 0; }
 
 .logo img {
   margin-right: 2%; }
@@ -97,13 +97,13 @@ ul {
   .title p {
     color: #0d1d25; }
 
-.head-nav {
-  padding: 0 182px 0 182px;
+.nav {
   border-top: solid 1px #b3b3b3; }
-  .head-nav nav {
-    margin-right: auto; }
-  .head-nav a:hover {
-    color: #62c6f8; }
+
+.head-nav nav {
+  margin-right: auto; }
+.head-nav a:hover {
+  color: #62c6f8; }
 
 header a:hover {
   color: #62c6f8; }
@@ -112,7 +112,6 @@ header a:hover {
   position: relative; }
   .banner-relative .banner-absolute {
     position: absolute;
-    padding-left: 180px;
     top: 0;
     height: 100%; }
 
