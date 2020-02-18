@@ -1,25 +1,32 @@
 .head-nav {
   @extend %flex-item;
-  padding: 0 10%;
+  padding: 0 182px 0 182px;
+  border-top: solid 1px $border;
   nav {
     margin-right: auto;
   }
+  a {
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 
-header a:hover {
-  color: $primary;
+header a {
+  &:hover {
+    color: $primary;
+  }
 }
 
 .banner-relative {
   position: relative;
-}
-
-.banner-absolute {
-  @extend %flex-item;
-  position: absolute;
-  padding-left: 180px;
-  top: 0;
-  height: 100%;
+  .banner-absolute {
+    @extend %flex-item;
+    position: absolute;
+    padding-left: 180px;
+    top: 0;
+    height: 100%;
+  }
 }
 
 .banner {
@@ -27,11 +34,7 @@ header a:hover {
     width: 100%;
   }
   a {
+    font-size: $font-sm;
     color: $black;
   }
-}
-.page-sidebar {
-  margin-right: 2%;
-  float: left;
-  width: 30%;
 }

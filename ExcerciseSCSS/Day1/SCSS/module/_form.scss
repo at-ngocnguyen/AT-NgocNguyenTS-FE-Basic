@@ -1,0 +1,19 @@
+form {
+  text-align: center;
+  input {
+    margin-bottom: 15px;
+    height: 38px;
+    width: 100%;
+    border: 0;
+  }
+  button {
+    width: 125px;
+    height: 47px;
+    margin-top: 2px;
+    font-family: $utm-bold;
+    font-size: $font-lg;
+    background-color: $green;
+    border: 0;
+    color: $white;
+  }
+}

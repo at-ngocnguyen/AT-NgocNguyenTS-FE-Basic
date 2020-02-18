@@ -1,5 +1,7 @@
 @charset "UTF-8";
-.contact, .logo, .head-nav, .banner-absolute, .list-logo li, .copyright, .listbox {
+/*-----Font-Family-----*/
+/*-----Font-Size-----*/
+.contact, .logo, .head-nav, .banner-relative .banner-absolute, .list-logo li, .copyright, .listbox {
   display: flex;
   align-items: center; }
 
@@ -13,7 +15,7 @@
   padding: 72px 147px 15px 182px; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: "utm-avo", Helvetica, sans-serif; }
 
 a {
   text-decoration: none; }
@@ -26,6 +28,12 @@ a {
 ul {
   list-style-position: inside; }
 
+.float-r {
+  float: right; }
+
+.img-100 {
+  width: 100%; }
+
 @font-face {
   font-family: "utm-avo";
   src: url("./../font/utm-avo.woff") format("woff");
@@ -37,7 +45,8 @@ ul {
   width: 100%; }
 
 .contact {
-  width: 326px; }
+  width: 326px;
+  font-family: Arial; }
   .contact span {
     font-size: 19px;
     color: #4cc1fc; }
@@ -45,6 +54,8 @@ ul {
     margin-right: 2%; }
   .contact p {
     width: 100%;
+    color: #999999;
+    font-style: italic;
     font-size: 14px; }
 
 .head-logo {
@@ -80,44 +91,32 @@ ul {
     font-family: "utm-avo-bold";
     text-transform: uppercase; }
   .title p {
-    color: #0d1d25;
-    font-family: "utm-avo"; }
+    color: #0d1d25; }
 
 .head-nav {
   padding: 0 182px 0 182px;
   border-top: solid 1px #b3b3b3; }
   .head-nav nav {
     margin-right: auto; }
-  ư
   .head-nav a:hover {
     color: #62c6f8; }
-
-.head-nav {
-  padding: 0 10%; }
-  .head-nav nav {
-    margin-right: auto; }
 
 header a:hover {
   color: #62c6f8; }
 
 .banner-relative {
   position: relative; }
-
-.banner-absolute {
-  position: absolute;
-  padding-left: 180px;
-  top: 0;
-  height: 100%; }
+  .banner-relative .banner-absolute {
+    position: absolute;
+    padding-left: 180px;
+    top: 0;
+    height: 100%; }
 
 .banner img {
   width: 100%; }
 .banner a {
+  font-size: 12px;
   color: #000000; }
-
-.page-sidebar {
-  margin-right: 2%;
-  float: left;
-  width: 30%; }
 
 .list-content {
   display: flex;
@@ -134,22 +133,14 @@ header a:hover {
     font-size: 16px;
     margin: 15px 0 7px 0; }
   .content p {
-    font-family: "utm-avo";
     font-size: 13px;
     margin-bottom: 25px; }
+  .content .content-item {
+    width: 250px;
+    margin: auto; }
 
-.content_item {
-  width: 250px;
-  margin: auto; }
-
-img[src="./img/muiten.jpg"] {
-  float: right; }
-
-.img-100 {
-  width: 100%; }
-
-.breadcrumb__item:before {
-  color: black;
+.breadcrumb-item:before {
+  color: #000000;
   content: "\00a0/\00a0";
   margin: 0 10px; }
 
@@ -157,14 +148,14 @@ img[src="./img/muiten.jpg"] {
   background-color: #62c6f8;
   color: #ffffff; }
   .footer li {
-    font-family: "utm-avo";
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 10px; }
 
 .list-info {
   padding: 13px;
   width: 20%; }
   .list-info h3 {
+    font-family: "utm-avo-bold";
     margin-bottom: 17px; }
   .list-info a {
     vertical-align: middle; }
@@ -177,7 +168,8 @@ img[src="./img/muiten.jpg"] {
 .info {
   display: flex;
   justify-content: space-around;
-  padding: 32px 212px 0px 89px; }
+  padding: 32px 212px 0px 89px;
+  text-transform: uppercase; }
   .info a {
     color: #ffffff;
     margin: 0;
@@ -188,8 +180,7 @@ img[src="./img/muiten.jpg"] {
   border-top: 1px solid #ffffff;
   color: #ffffff;
   height: 58px;
-  font-family: "utm-avo";
-  font-size: 13px;
+  font-size: 12px;
   padding: 0px 180px; }
   .copyright p:first-child {
     margin-right: auto; }
@@ -198,7 +189,6 @@ img[src="./img/muiten.jpg"] {
     color: #7df1cf; }
 
 .page-sidebar {
-  font-family: "utm-avo";
   float: left;
   width: 23%;
   margin-right: 20px; }
@@ -207,22 +197,6 @@ img[src="./img/muiten.jpg"] {
   margin-top: 45px;
   padding: 18px;
   background-color: #d9e4e9; }
-  .book-schedule form {
-    text-align: center; }
-    .book-schedule form input {
-      margin: 0px 0 15px 0;
-      height: 38px;
-      width: 100%;
-      border: 0; }
-    .book-schedule form button {
-      margin-top: 2px;
-      font-family: "utm-avo-bold";
-      font-size: 14px;
-      width: 125px;
-      height: 47px;
-      background-color: #29a329;
-      border: 0;
-      color: #ffffff; }
   .book-schedule h3 {
     text-align: left; }
 
@@ -238,12 +212,10 @@ input[type="date"] {
     background: none;
     z-index: 1; }
   input[type="date"]:before {
-    color: transparent;
-    display: block;
     font-family: "FontAwesome";
-    content: "\f073";
+    content: "";
     position: absolute;
-    top: 10px;
+    display: block;
     right: 6px;
     color: #999999; }
 
@@ -267,7 +239,6 @@ input[type="date"] {
   background-color: #d9e4e9;
   margin-bottom: 19px;
   padding-left: 15px;
-  background-color: #d9e4e9;
   height: 3em; }
 
 .line {
@@ -275,6 +246,23 @@ input[type="date"] {
   margin: 21px 0 17px 0;
   height: 3px;
   width: 66px; }
+
+form {
+  text-align: center; }
+  form input {
+    margin-bottom: 15px;
+    height: 38px;
+    width: 100%;
+    border: 0; }
+  form button {
+    width: 125px;
+    height: 47px;
+    margin-top: 2px;
+    font-family: "utm-avo-bold";
+    font-size: 14px;
+    background-color: #29a329;
+    border: 0;
+    color: #ffffff; }
 
 .item-link {
   display: block;

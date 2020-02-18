@@ -7,7 +7,7 @@
 .content {
   width: 295px;
   margin-right: 20px;
-  border: solid 1px #d9d9d9;
+  border: solid 1px $light-grey2;
   margin-bottom: 25px;
   box-sizing: border-box;
   h3 {
@@ -15,26 +15,19 @@
     margin: 15px 0 7px 0;
   }
   p {
-    font-family: "utm-avo";
-    font-size: 13px;
+    font-size: $font-md;
     margin-bottom: 25px;
+  }
+  .content-item {
+    width: 250px;
+    margin: auto;
   }
 }
 
-.content_item {
-  width: 250px;
-  margin: auto;
-}
-
-img[src="./img/muiten.jpg"] {
-  float: right;
-}
-
-.img-100 {
-  width: 100%;
-}
-.breadcrumb__item:before {
-  color: black;
-  content: "\00a0/\00a0";
-  margin: 0 10px;
+.breadcrumb-item {
+  &:before {
+    color: $black;
+    content: "\00a0/\00a0";
+    margin: 0 10px;
+  }
 }

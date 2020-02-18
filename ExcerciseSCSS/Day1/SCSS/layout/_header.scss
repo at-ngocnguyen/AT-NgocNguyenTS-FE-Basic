@@ -5,17 +5,19 @@
 .contact {
   @extend %flex-item;
   width: 326px;
-
+  font-family: $arial;
   span {
     font-size: 19px;
-    color: #4cc1fc;
+    color: $secondary;
   }
   img {
     margin-right: 2%;
   }
   p {
     width: 100%;
-    font-size: 14px;
+    color: $grey;
+    font-style: italic;
+    font-size: $font-lg;
   }
 }
 
@@ -36,9 +38,9 @@
   overflow: hidden;
   list-style-type: none;
   li {
-    font-size: 12px;
+    font-size: $font-sm;
     padding: 10px 0 8px 10px;
-    border-left: solid 1px #b3b3b3;
+    border-left: solid 1px $border;
     float: left;
     margin: 0;
     &:first-child {
@@ -47,7 +49,7 @@
   }
   a {
     display: block;
-    color: #b3b3b3;
+    color: $border;
     text-align: center;
     padding: 14px 16px;
   }
@@ -57,26 +59,11 @@
   width: 18em;
   h3 {
     font-size: 20px;
-    color: #0d1d25;
-    font-family: "utm-avo-bold";
+    color: $black2;
+    font-family: $utm-bold;
     text-transform: uppercase;
   }
   p {
-    color: #0d1d25;
-    font-family: "utm-avo";
-  }
-}
-
-.head-nav {
-  @extend %flex-item;
-  padding: 0 182px 0 182px;
-  border-top: solid 1px #b3b3b3;
-  nav {
-    margin-right: auto;
-  }
-  a {ư
-    &:hover {
-      color: $primary;
-    }
+    color: $black2;
   }
 }

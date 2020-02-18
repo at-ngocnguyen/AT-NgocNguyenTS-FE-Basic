@@ -1,5 +1,4 @@
 .page-sidebar {
-  font-family: "utm-avo";
   float: left;
   width: 23%;
   margin-right: 20px;
@@ -8,26 +7,7 @@
 .book-schedule {
   margin-top: 45px;
   padding: 18px;
-  background-color: #d9e4e9;
-  form {
-    text-align: center;
-    input {
-      margin: 0px 0 15px 0;
-      height: 38px;
-      width: 100%;
-      border: 0;
-    }
-    button {
-      margin-top: 2px;
-      font-family: "utm-avo-bold";
-      font-size: 14px;
-      width: 125px;
-      height: 47px;
-      background-color: $green;
-      border: 0;
-      color: $white;
-    }
-  }
+  background-color: $light-grey;
   h3 {
     text-align: left;
   }
@@ -35,7 +15,7 @@
 
 .book-content {
   h3 {
-    font-family: "utm-avo-bold";
+    font-family: $utm-bold;
     padding-top: 3px;
     font-size: 15px;
   }
@@ -48,19 +28,16 @@ input[type="date"] {
     z-index: 1;
   }
   &:before {
-    color: transparent;
-    display: block;
-    font-family: "FontAwesome";
-    content: "\f073";
+    @include font-awesome("\f073", $awesome-font);
     position: absolute;
-    top: 10px;
+    display: block;
     right: 6px;
     color: $grey;
   }
 }
 
 .listbox-content {
-  font-size: 14px;
+  font-size: $font-lg;
 }
 
 .list-item {
@@ -70,7 +47,7 @@ input[type="date"] {
   }
   li {
     margin-bottom: 13px;
-    font-size: 12px;
+    font-size: $font-sm;
     a {
       display: inline;
       margin-left: -6px;
@@ -87,7 +64,6 @@ input[type="date"] {
   background-color: $light-grey;
   margin-bottom: 19px;
   padding-left: 15px;
-  background-color: $light-grey;
   height: 3em;
 }
 
