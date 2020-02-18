@@ -12,7 +12,7 @@
   outline: none; }
 
 .container {
-  padding: 72px 147px 15px 182px; }
+  padding: 0 182px; }
 
 body {
   font-family: "utm-avo", Helvetica, sans-serif; }
@@ -48,8 +48,11 @@ ul {
   width: 326px;
   font-family: Arial; }
   .contact span {
+    font-style: normal;
     font-size: 19px;
     color: #4cc1fc; }
+    .contact span:before {
+      content: "\00a0"; }
   .contact img {
     margin-right: 2%; }
   .contact p {
@@ -84,6 +87,7 @@ ul {
     padding: 14px 16px; }
 
 .title {
+  margin-left: 13px;
   width: 18em; }
   .title h3 {
     font-size: 20px;
@@ -118,23 +122,28 @@ header a:hover {
   font-size: 12px;
   color: #000000; }
 
+.page {
+  padding-top: 70px;
+  margin-bottom: 20px; }
+
 .list-content {
   display: flex;
   flex-wrap: wrap;
-  width: 75%; }
+  justify-content: space-around;
+  width: 923px; }
 
 .content {
-  width: 295px;
-  margin-right: 20px;
+  width: 300px;
   border: solid 1px #d9d9d9;
-  margin-bottom: 25px;
-  box-sizing: border-box; }
-  .content h3 {
-    font-size: 16px;
-    margin: 15px 0 7px 0; }
+  margin-bottom: 20px; }
   .content p {
     font-size: 13px;
     margin-bottom: 25px; }
+    .content p:first-child {
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-family: "utm-avo-bold";
+      margin: 7px 0; }
   .content .content-item {
     width: 250px;
     margin: auto; }
@@ -151,14 +160,11 @@ header a:hover {
     font-size: 12px;
     margin-bottom: 10px; }
 
-.list-info {
-  padding: 13px;
-  width: 20%; }
-  .list-info h3 {
-    font-family: "utm-avo-bold";
-    margin-bottom: 17px; }
-  .list-info a {
-    vertical-align: middle; }
+.list-info h3 {
+  font-family: "utm-avo-bold";
+  margin-bottom: 17px; }
+.list-info a {
+  vertical-align: middle; }
 
 .list-logo img {
   margin-right: 6px; }
@@ -167,21 +173,22 @@ header a:hover {
 
 .info {
   display: flex;
-  justify-content: space-around;
-  padding: 32px 212px 0px 89px;
+  padding-top: 42px;
+  padding-bottom: 13px;
+  justify-content: space-between;
   text-transform: uppercase; }
   .info a {
     color: #ffffff;
     margin: 0;
     display: inline; }
 
+.footer-bottom {
+  border-top: 1px solid #ffffff; }
+
 .copyright {
-  padding: 0 5% 0 10%;
-  border-top: 1px solid #ffffff;
   color: #ffffff;
   height: 58px;
-  font-size: 12px;
-  padding: 0px 180px; }
+  font-size: 12px; }
   .copyright p:first-child {
     margin-right: auto; }
   .copyright p:last-child {
@@ -190,7 +197,7 @@ header a:hover {
 
 .page-sidebar {
   float: left;
-  width: 23%;
+  width: 290px;
   margin-right: 20px; }
 
 .book-schedule {

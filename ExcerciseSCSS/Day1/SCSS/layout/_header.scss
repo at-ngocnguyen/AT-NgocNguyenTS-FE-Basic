@@ -7,8 +7,12 @@
   width: 326px;
   font-family: $arial;
   span {
+    font-style: normal;
     font-size: 19px;
     color: $secondary;
+    &:before {
+      content: "\00a0";
+    }
   }
   img {
     margin-right: 2%;
@@ -56,6 +60,7 @@
 }
 
 .title {
+  margin-left: 13px;
   width: 18em;
   h3 {
     font-size: 20px;
