@@ -74,13 +74,9 @@
   nav {
     margin-right: auto;
   }
-  a {
+  a {ư
     &:hover {
-      color: #62c6f8;
+      color: $primary;
     }
   }
-}
-
-header a:hover {
-  color: $primary;
 }

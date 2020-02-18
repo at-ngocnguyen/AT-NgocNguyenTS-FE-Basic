@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .contact, .logo, .head-nav, .banner-absolute, .list-logo li, .copyright, .listbox {
   display: flex;
   align-items: center; }
@@ -87,11 +88,9 @@ ul {
   border-top: solid 1px #b3b3b3; }
   .head-nav nav {
     margin-right: auto; }
+  ư
   .head-nav a:hover {
     color: #62c6f8; }
-
-header a:hover {
-  color: #62c6f8; }
 
 .head-nav {
   padding: 0 10%; }
