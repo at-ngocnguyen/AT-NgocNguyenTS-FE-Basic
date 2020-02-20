@@ -1,0 +1,40 @@
+.nav {
+  border-top: solid 1px $border;
+}
+.head-nav {
+  @extend %flex-item;
+  nav {
+    margin-right: auto;
+  }
+  a {
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+header a {
+  &:hover {
+    color: $primary;
+  }
+}
+
+.banner-relative {
+  position: relative;
+  .banner-absolute {
+    @extend %flex-item;
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+}
+
+.banner {
+  img {
+    width: 100%;
+  }
+  a {
+    font-size: $font-sm;
+    color: $black;
+  }
+}

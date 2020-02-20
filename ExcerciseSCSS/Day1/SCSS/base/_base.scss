@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.container {
+  padding: 0 182px;
+}
+
+body {
+  font-family: $default-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clr:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+.float-r {
+  float: right;
+}
+
+.img-100 {
+  width: 100%;
+}
+
+form {
+  text-align: center;
+}

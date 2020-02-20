@@ -1,0 +1,75 @@
+.page-sidebar {
+  float: left;
+  width: 290px;
+  margin-right: 20px;
+}
+
+.book-schedule {
+  margin-top: 45px;
+  padding: 18px;
+  background-color: $light-grey;
+  h3 {
+    text-align: left;
+  }
+}
+
+.book-content {
+  h3 {
+    font-family: $utm-bold;
+    padding-top: 3px;
+    font-size: 15px;
+  }
+}
+input[type="date"] {
+  position: relative;
+  &::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+  }
+  &:before {
+    @include font-awesome("\f073", $awesome-font);
+    position: absolute;
+    display: block;
+    right: 6px;
+    color: $grey;
+  }
+}
+
+.listbox-content {
+  font-size: $font-lg;
+}
+
+.list-item {
+  ul {
+    padding-left: 17px;
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 13px;
+    font-size: $font-sm;
+    a {
+      display: inline;
+      margin-left: -6px;
+    }
+  }
+  a {
+    text-align: left;
+    color: $black;
+  }
+}
+
+.listbox {
+  @extend %flex-item;
+  background-color: $light-grey;
+  margin-bottom: 19px;
+  padding-left: 15px;
+  height: 3em;
+}
+
+.line {
+  background-color: $primary;
+  margin: 21px 0 17px 0;
+  height: 3px;
+  width: 66px;
+}

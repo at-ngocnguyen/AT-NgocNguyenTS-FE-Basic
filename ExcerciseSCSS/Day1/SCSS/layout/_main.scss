@@ -1,0 +1,39 @@
+.page {
+  padding-top: 70px;
+  margin-bottom: 20px;
+}
+.list-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 923px;
+}
+
+.content {
+  width: 300px;
+  border: solid 1px $light-grey2;
+  margin-bottom: 20px;
+
+  p {
+    font-size: $font-md;
+    margin-bottom: 25px;
+    &:first-child {
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-family: $utm-bold;
+      margin: 7px 0;
+    }
+  }
+  .content-item {
+    width: 250px;
+    margin: auto;
+  }
+}
+
+.breadcrumb-item {
+  &:before {
+    color: $black;
+    content: "\00a0/\00a0";
+    margin: 0 10px;
+  }
+}
