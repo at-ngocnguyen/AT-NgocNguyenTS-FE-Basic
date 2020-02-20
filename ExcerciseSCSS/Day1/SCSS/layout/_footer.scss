@@ -40,13 +40,18 @@
     margin: 0;
     display: inline;
   }
+  div {
+    &:last-child{
+      padding-right: 190px;
+    };
+  }
 }
 
 .footer-bottom {
   border-top: 1px solid $white;
 }
 .copyright {
-  @extend %flex-item; 
+  @extend %flex-item;
   color: $white;
   height: 58px;
   font-size: $font-sm;

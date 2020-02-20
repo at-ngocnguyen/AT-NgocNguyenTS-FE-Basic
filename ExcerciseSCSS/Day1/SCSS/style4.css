@@ -34,6 +34,9 @@ ul {
 .img-100 {
   width: 100%; }
 
+form {
+  text-align: center; }
+
 @font-face {
   font-family: "utm-avo";
   src: url("./../font/utm-avo.woff") format("woff");
@@ -180,6 +183,8 @@ header a:hover {
     color: #ffffff;
     margin: 0;
     display: inline; }
+  .info div:last-child {
+    padding-right: 190px; }
 
 .footer-bottom {
   border-top: 1px solid #ffffff; }
@@ -253,22 +258,12 @@ input[type="date"] {
   height: 3px;
   width: 66px; }
 
-form {
-  text-align: center; }
-  form input {
-    margin-bottom: 15px;
-    height: 38px;
-    width: 100%;
-    border: 0; }
-  form button {
-    width: 125px;
-    height: 47px;
-    margin-top: 2px;
-    font-family: "utm-avo-bold";
-    font-size: 14px;
-    background-color: #29a329;
-    border: 0;
-    color: #ffffff; }
+.form-control {
+  padding: 0 15px;
+  margin-bottom: 15px;
+  height: 38px;
+  width: 100%;
+  border: 0; }
 
 .item-link {
   display: block;
@@ -276,5 +271,17 @@ form {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none; }
+
+.btn {
+  width: 125px;
+  height: 47px;
+  margin-top: 2px;
+  font-family: "utm-avo-bold";
+  font-size: 14px;
+  border: 0; }
+
+.btn-green {
+  background-color: #29a329;
+  color: #ffffff; }
 
 /*# sourceMappingURL=style4.css.map */
