@@ -1,0 +1,29 @@
+.form-step {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  line-height: 1.4rem;
+  margin: 0 2px;
+  padding: 0.35rem;
+  background-color: $secondary;
+  border: none;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  opacity: 1;
+}

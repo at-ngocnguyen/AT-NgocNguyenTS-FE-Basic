@@ -1,0 +1,30 @@
+.was-validated {
+  background-color: $white;
+  border-color: $success;
+}
+
+.was-validated:focus {
+  background-color: $white;
+  border-color: $success;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.invalid {
+  border-color: $invalid;
+}
+
+.invalid:focus {
+  border-color: $invalid;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.tab .phone-item div {
+  padding-left: $md;
+  color: $invalid;
+  text-align: left;
+  font-size: $sm;
+}
+.phone span {
+  font-size: $lg;
+  padding: 0 10px;
+}

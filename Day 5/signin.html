@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./style/style.css" rel="stylesheet">
+
+
+<body>
+  <main>
+    <form id="regForm" class="needs-validation">
+      <div class="form-step">
+        <span class="step">1</span>
+        <span class="step">2</span>
+        <span class="step">3</span>
+        <span class="step">4</span>
+      </div>
+      <div class="tab">
+        <input id="js-fname" oninput="this.className = ''" placeholder="First name..." name="fname" type="text">
+        <div></div>
+        <input id="js-lname" oninput="this.className = ''" placeholder="Last name..." name="lname" type="text">
+        <div></div>
+        <input id="js-email" oninput="this.className = ''" placeholder="E-mail..." name="email" type="email">
+        <div></div>
+        <input id="js-pass" oninput="this.className = ''" placeholder="Password..." name="lname" type="password">
+        <div></div>
+        <input id="js-repass" oninput="this.className = ''" placeholder="Comfirm password..." name="lname"
+          type="password">
+        <div></div>
+      </div>
+      <div class="tab">
+        <h2>Phone number</h2>
+        <div class="phone">
+          <div class="phone-item">
+            <input id="js-phone1" name="phone1" type="text" onKeyup="autotab(this, phone2)"
+              oninput="this.className = ''" maxlength=4 name="phone">
+            <div></div>
+          </div><span>-</span>
+          <div class="phone-item">
+            <input id="js-phone2" name="phone2" type="text" onKeyup="autotab(this, phone3)"
+              oninput="this.className = ''" maxlength=3 name="phone">
+            <div></div>
+          </div><span>-</span>
+          <div class="phone-item">
+            <input id="js-phone3" name="phone3" type="text" oninput="this.className = ''" maxlength=3 name="phone">
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <h2>SMS CODE</h2>
+        <div class="code">
+          <div class="code-item">
+            <input id="token-1" type="text" name="first" oninput="this.className = ''" onKeyup="autotab(this, second)"
+              maxlength=1>
+            <div></div>
+          </div>
+          <div class="code-item">
+            <input id="token-2" type="text" name="second" oninput="this.className = ''" onKeyup="autotab(this, third)"
+              maxlength=1>
+            <div></div>
+          </div>
+          <div class="code-item">
+            <input id="token-3" type="text" name="third" oninput="this.className = ''" onKeyup="autotab(this, four)"
+              maxlength=1>
+            <div></div>
+          </div>
+          <div class="code-item">
+            <input id="token-4" type="text" name="four" oninput="this.className = ''" maxlength=1>
+            <div></div>
+          </div>
+        </div>
+        <button style="float: left;" class="btn btn-link" type="button" id="js-resetToken">Reset Code</button>
+      </div>
+      <div class="tab">
+        <h2>information</h2>
+        <input type="text" disabled id="js-showname">
+        <input type="text" disabled id="js-showemail">
+        <input type="text" disabled id="js-showphone">
+      </div>
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button class="btn" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button class="btn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+
+    </form>
+
+  </main>
+
+  <!-- <h1>Thank for Sign in</h1>
+  <div class=" pyro">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div> -->
+  <script src="js/page.js"></script>
+  <script src="js/smscode.js"></script>
+  <script src="js/validate.js"></script>
+</body>
+
+</html>
