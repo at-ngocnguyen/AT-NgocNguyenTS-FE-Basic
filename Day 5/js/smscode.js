@@ -26,8 +26,7 @@ function checkToken() {
 function resetToken() {
   var newToken = createToken();
   dataUser.token = newToken;
-  alert('Your Token is :' + dataUser.token);
-  console.log(dataUser);
+  alert('Your Token is : ' + dataUser.token);
 }
 window.onload = function () {
   $('js-resetToken').onclick = function () {

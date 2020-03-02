@@ -36,7 +36,6 @@ function getInfor() {
     phone: phone,
     token: token,
   }
-  console.log(dataUser);
 }
 
 function showInfor() {
@@ -47,7 +46,6 @@ function showInfor() {
 
 function nextPrev(n) {
   var pastToken = dataUser.token;
-  console.log(pastToken)
   var x = document.getElementsByClassName('tab');
   switch (currentTab) {
     case 0: dataUser.token = 'default';

@@ -43,7 +43,7 @@ function validateEmail(email) {
 }
 
 function checkForm() {
- 
+
   valid = true;
   x = document.getElementsByClassName('tab');
   y = x[currentTab].getElementsByTagName('input');
@@ -59,7 +59,10 @@ function checkForm() {
     valid = false
     $('js-pass').className = ' invalid';
   }
-  if ($('js-repass').value !== $('js-pass').value) {
+  if ($('js-repass').value.length < 8) {
+    valid = false
+    $('js-repass').className = ' invalid';
+  } else if ($('js-repass').value !== $('js-pass').value) {
     valid = false
     $('js-repass').className = ' invalid';
   }
