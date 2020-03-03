@@ -1,0 +1,18 @@
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+    random($width)-$width / 4 + px random($height)-$height / 3 + px hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 $white
+}
+
+/*--thank you--*/
+
+@function makelongshadow($color) {
+  $val: 0px 0px $color;
+
+  @for $i from 1 through 150 {
+    $val: #{$val},
+    #{$i}px #{$i}px #{$color};
+  }
+
+  @return $val;
+}

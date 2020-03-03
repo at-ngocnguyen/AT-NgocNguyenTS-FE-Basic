@@ -3,15 +3,14 @@ var dataUser = {
 
 function $(id) {
   return document.getElementById(id);
-}
-
+};
 
 //auto next input function
 function autotab(original, destination) {
   if (original.getAttribute && original.value.length == original.getAttribute('maxlength')) {
     destination.focus();
   }
-}
+};
 
 //auto upperCase fist letter in string
 function titleCase(str) {
@@ -20,7 +19,7 @@ function titleCase(str) {
     splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
   }
   return splitStr.join(' ');
-}
+};
 
 function getInfor() {
   var name = titleCase($('js-fname').value) + ' ' + titleCase($('js-lname').value);
@@ -36,16 +35,16 @@ function getInfor() {
     phone: phone,
     token: token,
   }
-}
+};
 
 function showInfor() {
-  $('js-showname').value = dataUser.name;
+  $('js-showname').innerHTML = dataUser.name;
   $('js-showemail').value = dataUser.email;
   $('js-showphone').value = dataUser.phone;
-}
+};
 
 function nextPrev(n) {
-  var pastToken = dataUser.token;
+  var currentPhone = dataUser.phone;
   var x = document.getElementsByClassName('tab');
   switch (currentTab) {
     case 0: dataUser.token = 'default';
@@ -55,32 +54,72 @@ function nextPrev(n) {
       if (n == 1) {
         if (!validPhone()) {
           return false;
-        } else if (pastToken !== dataUser.token) {
+        } else if (currentPhone !== dataUser.phone) {
           alert('Your token is : ' + dataUser.token)
         }
       }
       break;
     case 2:
-
       if (n == 1) {
         if (!checkToken()) {
           return false;
         }
       }
       break;
+    case 3:
+      if (n == 1) {
+        $('js-page').style.display = 'none';
+        $('js-thank').style.display = 'block'
+      }
+
   }
   if (n == 1 && !checkForm()) return false;
   x[currentTab].style.display = 'none';
   currentTab = currentTab + n;
-  if (currentTab >= x.length) {
-    $('regForm').submit();
-    return false;
-  }
   showTab(currentTab);
-}
+};
 
 window.onload = function () {
   $('js-resetToken').onclick = function () {
     resetToken();
   };
+};
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  var x = document.getElementsByClassName('tab');
+  x[n].style.display = 'block';
+  if (n == 0) {
+    $('prevBtn').style.display = 'none';
+  } else {
+    $('prevBtn').style.display = 'inline';
+  }
+  if (n == (x.length - 1)) {
+    $('nextBtn').innerHTML = 'Submit';
+  } else {
+    $('nextBtn').innerHTML = 'Next';
+  }
+  fixStepIndicator(n)
+}
+
+function fixStepIndicator(n) {
+  // This function removes the 'active' class of all steps...
+  var i, x = document.getElementsByClassName('step');
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(' active', '');
+  }
+  //... and adds the 'active' class on the current step:
+  x[n].className += ' active';
+}
+//Edit state of input when check
+function validSucces(element) {
+  element.nextElementSibling.className = 'success'
+  element.nextElementSibling.innerHTML = ' Was-validated' + '<i class="fa fa-check-circle" ></i>';
+}
+
+function validFalse(element, content) {
+  element.nextElementSibling.className = 'invalid-text'
+  element.nextElementSibling.innerHTML = content + '<i class="fa fa-exclamation-triangle" ></i>';
 }

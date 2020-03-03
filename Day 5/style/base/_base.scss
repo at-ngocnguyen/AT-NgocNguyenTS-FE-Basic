@@ -10,17 +10,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-main {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  height: 100vh;
-
-}
-
 h1 {
   text-align: center;
   border-bottom: solid 3px $primary;
@@ -36,27 +25,4 @@ h2 {
 
 .tab {
   display: none;
-}
-
-.form {
-  position: relative;
-  border-radius: 10px;
-  background: $white;
-  padding: 30px;
-  width: 90%;
-  max-width: 450px;
-  margin: 100px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
-.code,.phone{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.code-item{
-  width: 20%;
 }
