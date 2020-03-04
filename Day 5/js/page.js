@@ -57,6 +57,8 @@ function nextPrev(n) {
         if (!validPhone()) {
           return false;
         } else if (currentPhone !== dataUser.phone || currentName !== dataUser.name || currentEmail !== dataUser.email) {
+          dataUser.token = createToken();
+          console.log("nextPrev -> dataUser", dataUser)
           modalBox(dataUser.token)
         }
       }

@@ -1,8 +1,8 @@
 .pyro > .before, .pyro > .after {
   @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   box-shadow: $box-shadow2;
 }
