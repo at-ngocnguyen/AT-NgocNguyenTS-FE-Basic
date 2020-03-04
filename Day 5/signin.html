@@ -9,13 +9,17 @@
   <main class="page" id="js-page">
     <form id="regForm" class="needs-validation form">
       <div class="form-step">
-        <span class="step">1</span>
-        <span class="step">2</span>
-        <span class="step">3</span>
-        <span class="step">4</span>
+        <p class="step">1</p>
+        <span></span>
+        <p class="step">2</p>
+        <span></span>
+        <p class="step">3</p>
+        <span></span>
+        <p class="step">4</p>
       </div>
 
       <div class="tab">
+        <h2>Registration</h2>
         <input id="js-fname" oninput="this.className = ''" placeholder="First name..." name="fname" type="text">
         <div class="error"></div>
         <input id="js-lname" oninput="this.className = ''" placeholder="Last name..." name="lname" type="text">
@@ -74,17 +78,15 @@
         <button style="float: left;" class="btn btn-link" type="button" id="js-resetToken">Reset Code</button>
       </div>
       <div class="tab">
-        <h2>Hi - <span id="js-showname"></span></h2>
-        <!-- <input type="text" disabled id="js-showname"> -->
-        <hr>
-        <h2>Your information: </h2>
-        <label>Email:</label>
-        <input type="text" disabled id="js-showemail">
-        <label>Phone number:</label>
-        <input type="text" disabled id="js-showphone">
+        <h3>Hi - <span id="js-showname"></span></h3>
+        <section class="information">
+            <h3>Your information: </h3>
+            <p>Email: <span id="js-showemail"></span></p>
+            <p>Phone number: <span id="js-showphone"></span></p>
+        </section>
       </div>
-      <div style="overflow:auto;">
-        <div style="float:right;">
+      <div class="group-btn clr">
+        <div class="group-btn-item">
           <button class="btn btn-prev" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
           <button class="btn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
         </div>

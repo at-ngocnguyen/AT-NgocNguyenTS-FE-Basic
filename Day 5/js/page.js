@@ -39,8 +39,8 @@ function getInfor() {
 
 function showInfor() {
   $('js-showname').innerHTML = dataUser.name;
-  $('js-showemail').value = dataUser.email;
-  $('js-showphone').value = dataUser.phone;
+  $('js-showemail').innerHTML = dataUser.email;
+  $('js-showphone').innerHTML = dataUser.phone;
 };
 
 function nextPrev(n) {

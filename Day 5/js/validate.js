@@ -62,7 +62,12 @@ function checkForm() {
   }
 
   if (valid) {
-    document.getElementsByClassName('step')[currentTab].className += ' finish';
+    var currenStep = document.getElementsByClassName('step')[currentTab];
+    currenStep.className += ' finish';
+    if (currenStep.nextElementSibling) {
+      currenStep.nextElementSibling.className = 'line-success';
+    }
+    currenStep.innerHTML = '<i class="fa fa-check" ></i>';
   }
   return valid;
 };

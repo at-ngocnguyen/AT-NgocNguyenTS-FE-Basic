@@ -1,6 +1,15 @@
 .form-step {
   @extend %content-center;
   margin-bottom: 1rem;
+
+  span {
+    height: 3px;
+    width: 30px;
+    background-color: $primary;
+    &.line-success{
+      background-color: $success;
+    }
+  }
 }
 
 .step {
@@ -20,6 +29,9 @@
   }
 
   &.finish {
+    background-color: $white;
+    color: $success;
+    border: solid $success 2px;
     opacity: 1;
   }
 }

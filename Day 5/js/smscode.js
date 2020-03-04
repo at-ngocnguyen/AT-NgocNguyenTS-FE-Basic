@@ -15,11 +15,11 @@ function checkToken() {
     validSucces($('js-code'));
     showInfor();
   } else {
-    validFalse($('js-code'), 'Valid Code. Please re-input or Reset code');
     for (var i = 0; i < y.length; i++) {
       y[i].className += ' invalid';
       valid = false;
     }
+    validFalse($('js-code'), 'Valid Code. Please re-input or Reset code');
   }
   return valid
 };

@@ -1,5 +1,12 @@
+.group-btn {
+  overflow: auto;
+  .group-btn-item {
+    float: right;
+  }
+}
 .btn {
   background-color: $primary;
+  width: 110px;
   border: none;
   color: $white;
   padding: 15px;
