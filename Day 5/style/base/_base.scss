@@ -11,12 +11,11 @@ body {
 }
 
 h2 {
-  margin-top: 30px;
+  margin-top: $sm;
   text-align: center;
   font-size: $lg;
   text-transform: uppercase;
   padding: 10px 0;
-  border-bottom: solid 3px $primary;
   margin-bottom: $sm;
 }
 
@@ -28,6 +27,7 @@ h3 {
 
 .tab {
   display: none;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .clr:after {

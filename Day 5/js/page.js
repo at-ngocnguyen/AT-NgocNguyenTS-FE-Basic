@@ -22,9 +22,10 @@ function titleCase(str) {
 };
 
 function getInfor() {
+  var token;
   var name = titleCase($('js-fname').value) + ' ' + titleCase($('js-lname').value);
-  if (dataUser.token === 'default') {
-    var token = createToken();
+  if (!dataUser.token) {
+    token = createToken();
   } else {
     token = dataUser.token;
   }
@@ -44,18 +45,19 @@ function showInfor() {
 };
 
 function nextPrev(n) {
+  var currentName = dataUser.name;
+  var currentEmail = dataUser.email;
   var currentPhone = dataUser.phone;
   var x = document.getElementsByClassName('tab');
   switch (currentTab) {
-    case 0: dataUser.token = 'default';
-      dataUser.phone = '';
+    case 0:
       break;
     case 1:
       if (n == 1) {
         if (!validPhone()) {
           return false;
-        } else if (currentPhone !== dataUser.phone) {
-          alert('Your token is : ' + dataUser.token)
+        } else if (currentPhone !== dataUser.phone || currentName !== dataUser.name || currentEmail !== dataUser.email) {
+          modalBox(dataUser.token)
         }
       }
       break;
@@ -90,7 +92,9 @@ showTab(currentTab); // Display the current tab
 
 function showTab(n) {
   var x = document.getElementsByClassName('tab');
-  x[n].style.display = 'block';
+  if (x[n]) {
+    x[n].style.display = 'block';
+  }
   if (n == 0) {
     $('prevBtn').style.display = 'none';
   } else {
@@ -111,7 +115,9 @@ function fixStepIndicator(n) {
     x[i].className = x[i].className.replace(' active', '');
   }
   //... and adds the 'active' class on the current step:
-  x[n].className += ' active';
+  if (x[n]) {
+    x[n].className += ' active';
+  }
 }
 //Edit state of input when check
 function validSucces(element) {
@@ -122,4 +128,15 @@ function validSucces(element) {
 function validFalse(element, content) {
   element.nextElementSibling.className = 'invalid-text'
   element.nextElementSibling.innerHTML = content + '<i class="fa fa-exclamation-triangle" ></i>';
+}
+
+//Modal Edit event
+function modalBox(token) {
+  var modal = $("myModal");
+  var span = document.getElementsByClassName("close")[0];
+  $('js-token').innerHTML = token;
+  modal.style.display = 'block';
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
 }

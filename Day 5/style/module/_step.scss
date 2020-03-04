@@ -3,8 +3,8 @@
   margin-bottom: 1rem;
 
   span {
-    height: 3px;
-    width: 30px;
+    height: 2px;
+    width: 80px;
     background-color: $primary;
     &.line-success{
       background-color: $success;
@@ -14,10 +14,9 @@
 
 .step {
   @extend %content-center;
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   line-height: 1.4rem;
-  margin: 0 5px;
   padding: 0.35rem;
   background-color: $secondary;
   border: none;
