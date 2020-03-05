@@ -15,9 +15,10 @@
 /* Modal Content */
 .modal-content {
   position: relative;
+  @extend %content-center ;
   background-color: #fefefe;
   margin: auto;
-  padding: 70px;
+  height: 160px;
   border: 1px solid #888;
   border-radius: 20px;
   width: 30%;
@@ -27,7 +28,7 @@
 .close {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 10px;
   color: $invalid;
   font-size: $lg;
   font-weight: bold;
