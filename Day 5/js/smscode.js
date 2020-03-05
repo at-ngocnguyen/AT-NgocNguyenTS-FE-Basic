@@ -8,8 +8,7 @@ function checkToken() {
   var token3 = $('token-3').value;
   var token4 = $('token-4').value;
   var token = '' + token1 + token2 + token3 + token4;
-  x = document.getElementsByClassName('tab');
-  y = x[currentTab].getElementsByTagName('input');
+  var y = x[currentTab].getElementsByTagName('input');
   valid = true;
   if (dataUser.token === token) {
     validSucces($('js-code'));
@@ -33,4 +32,7 @@ window.onload = function () {
   $('js-resetToken').onclick = function () {
     resetToken();
   };
+  $('prevBtn').onclick = function () { nextPrev(-1); };
+  $('nextBtn').onclick = function () { nextPrev(1); };
+  loadInput();
 };

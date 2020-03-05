@@ -1,14 +1,28 @@
+//Default function and variable
 var dataUser = {
 };
+
+var x = document.getElementsByClassName('tab');
 
 function $(id) {
   return document.getElementById(id);
 };
+function loadInput() {
+  var input = document.getElementsByTagName('input');
+
+  for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener('input', function () {
+      this.className = '';
+    })
+  }
+};
 
 //auto next input function
 function autotab(original, destination) {
-  if (original.getAttribute && original.value.length == original.getAttribute('maxlength')) {
-    destination.focus();
+  if (destination) {
+    if (original.getAttribute && original.value.length == original.getAttribute('maxlength')) {
+      destination.focus();
+    }
   }
 };
 
@@ -48,7 +62,6 @@ function nextPrev(n) {
   var currentName = dataUser.name;
   var currentEmail = dataUser.email;
   var currentPhone = dataUser.phone;
-  var x = document.getElementsByClassName('tab');
   switch (currentTab) {
     case 0:
       break;
@@ -74,7 +87,6 @@ function nextPrev(n) {
         $('js-page').style.display = 'none';
         $('js-thank').style.display = 'block'
       }
-
   }
   if (n == 1 && !checkForm()) return false;
   x[currentTab].style.display = 'none';
@@ -92,7 +104,6 @@ var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
-  var x = document.getElementsByClassName('tab');
   if (x[n]) {
     x[n].style.display = 'block';
   }

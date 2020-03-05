@@ -18,8 +18,7 @@ function checkForm() {
     currentTab = 3
   }
   valid = true;
-  x = document.getElementsByClassName('tab');
-  y = x[currentTab].getElementsByTagName('input');
+  var y = x[currentTab].getElementsByTagName('input');
 
 
   //validate
@@ -74,8 +73,7 @@ function checkForm() {
 
 function validPhone() {
   var valid = true;
-  x = document.getElementsByClassName('tab');
-  y = x[currentTab].getElementsByTagName('input');
+  var y = x[currentTab].getElementsByTagName('input');
   for (var i = 0; i < y.length; i++) {
     if (y[i].value.length < y[i].getAttribute('maxlength') || isNaN(y[i].value)) {
       y[i].className += ' invalid';

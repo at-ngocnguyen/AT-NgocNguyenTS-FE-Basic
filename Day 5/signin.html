@@ -20,15 +20,15 @@
 
       <div class="tab">
         <h2>Registration</h2>
-        <input id="js-fname" oninput="this.className = ''" placeholder="First name..." name="fname" type="text">
+        <input id="js-fname" placeholder="First name..." name="fname" type="text">
         <div class="error"></div>
-        <input id="js-lname" oninput="this.className = ''" placeholder="Last name..." name="lname" type="text">
+        <input id="js-lname" placeholder="Last name..." name="lname" type="text">
         <div class="error"></div>
-        <input id="js-email" oninput="this.className = ''" placeholder="E-mail..." name="email" type="email">
+        <input id="js-email" placeholder="E-mail..." name="email" type="email">
         <div class="error"></div>
-        <input id="js-pass" oninput="this.className = ''" placeholder="Password..." name="lname" type="password">
+        <input id="js-pass" placeholder="Password..." name="lname" type="password">
         <div class="error"></div>
-        <input id="js-repass" oninput="this.className = ''" placeholder="Comfirm password..." name="lname"
+        <input id="js-repass" placeholder="Comfirm password..." name="lname"
           type="password">
         <div class="error"></div>
       </div>
@@ -37,16 +37,16 @@
         <div class="phone">
           <div class="phone-item">
             <input id="js-phone1" name="phone1" type="text" onKeyup="autotab(this, phone2)"
-              oninput="this.className = ''" maxlength=4 name="phone">
+             maxlength=4 name="phone">
             <div></div>
           </div><span>-</span>
           <div class="phone-item">
             <input id="js-phone2" name="phone2" type="text" onKeyup="autotab(this, phone3)"
-              oninput="this.className = ''" maxlength=3 name="phone">
+             maxlength=3 name="phone">
             <div></div>
           </div><span>-</span>
           <div class="phone-item">
-            <input id="js-phone3" name="phone3" type="text" oninput="this.className = ''" maxlength=3 name="phone">
+            <input id="js-phone3" name="phone3" type="text" maxlength=3 name="phone">
             <div></div>
           </div>
         </div>
@@ -55,22 +55,22 @@
         <h2>SMS CODE</h2>
         <div class="code" id="js-code">
           <div class="code-item">
-            <input id="token-1" type="text" name="first" oninput="this.className = ''" onKeyup="autotab(this, second)"
+            <input id="token-1" type="text" name="first" onKeyup="autotab(this, second)"
               maxlength=1>
             <div></div>
           </div>
           <div class="code-item">
-            <input id="token-2" type="text" name="second" oninput="this.className = ''" onKeyup="autotab(this, third)"
+            <input id="token-2" type="text" name="second" onKeyup="autotab(this, third)"
               maxlength=1>
             <div></div>
           </div>
           <div class="code-item">
-            <input id="token-3" type="text" name="third" oninput="this.className = ''" onKeyup="autotab(this, four)"
+            <input id="token-3" type="text" name="third" onKeyup="autotab(this, four)"
               maxlength=1>
             <div></div>
           </div>
           <div class="code-item">
-            <input id="token-4" type="text" name="four" oninput="this.className = ''" maxlength=1>
+            <input id="token-4" type="text" name="four" maxlength=1>
             <div></div>
           </div>
         </div>
@@ -87,8 +87,8 @@
       </div>
       <div class="group-btn clr">
         <div class="group-btn-item">
-          <button class="btn btn-prev" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-          <button class="btn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          <button class="btn btn-prev" type="button" id="prevBtn" >Previous</button>
+          <button class="btn" type="button" id="nextBtn" >Next</button>
         </div>
       </div>
 
