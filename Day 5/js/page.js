@@ -7,6 +7,7 @@ var x = document.getElementsByClassName('tab');
 function $(id) {
   return document.getElementById(id);
 };
+
 function loadInput() {
   var input = document.getElementsByTagName('input');
 
@@ -64,6 +65,7 @@ function nextPrev(n) {
   var currentPhone = dataUser.phone;
   switch (currentTab) {
     case 0:
+      if (n == 1 && !checkForm()) return false;
       break;
     case 1:
       if (n == 1) {
@@ -71,7 +73,7 @@ function nextPrev(n) {
           return false;
         } else if (currentPhone !== dataUser.phone || currentName !== dataUser.name || currentEmail !== dataUser.email) {
           dataUser.token = createToken();
-          modalBox(dataUser.token)
+          modalBox(dataUser.token);
         }
       }
       break;
@@ -85,23 +87,14 @@ function nextPrev(n) {
     case 3:
       if (n == 1) {
         $('js-page').style.display = 'none';
-        $('js-thank').style.display = 'block'
+        $('js-thank').style.display = 'block';
       }
+      break;
   }
-  if (n == 1 && !checkForm()) return false;
   x[currentTab].style.display = 'none';
   currentTab = currentTab + n;
   showTab(currentTab);
 };
-
-window.onload = function () {
-  $('js-resetToken').onclick = function () {
-    resetToken();
-  };
-};
-
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
 
 function showTab(n) {
   if (x[n]) {
@@ -133,16 +126,18 @@ function fixStepIndicator(n) {
 }
 //Edit state of input when check
 function validSucces(element) {
-  element.nextElementSibling.className = 'success'
+  element.classList.add('was-validated');
+  element.nextElementSibling.className = ' success';
   element.nextElementSibling.innerHTML = ' Was-validated' + '<i class="fa fa-check-circle" ></i>';
 }
 
 function validFalse(element, content) {
-  element.nextElementSibling.className = 'invalid-text'
+  element.classList.add('invalid');
+  element.nextElementSibling.classList.add('invalid-text');
   element.nextElementSibling.innerHTML = content + '<i class="fa fa-exclamation-triangle" ></i>';
 }
 
-//Modal Edit event
+//Modal event
 function modalBox(token) {
   var modal = $("myModal");
   var span = document.getElementsByClassName("close")[0];
@@ -152,3 +147,14 @@ function modalBox(token) {
     modal.style.display = "none";
   }
 }
+
+window.onload = function () {
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+  $('js-resetToken').onclick = function () {
+    resetToken();
+  };
+  $('prevBtn').onclick = function () { nextPrev(-1); };
+  $('nextBtn').onclick = function () { nextPrev(1); };
+  loadInput();
+};

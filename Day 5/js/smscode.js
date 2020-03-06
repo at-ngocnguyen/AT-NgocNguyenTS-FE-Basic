@@ -15,12 +15,11 @@ function checkToken() {
     showInfor();
   } else {
     for (var i = 0; i < y.length; i++) {
-      y[i].className += ' invalid';
       valid = false;
     }
     validFalse($('js-code'), 'Valid Code. Please re-input or Reset code');
   }
-  return valid
+  return valid;
 };
 
 function resetToken() {
@@ -28,11 +27,3 @@ function resetToken() {
   dataUser.token = newToken;
   modalBox(newToken);
 }
-window.onload = function () {
-  $('js-resetToken').onclick = function () {
-    resetToken();
-  };
-  $('prevBtn').onclick = function () { nextPrev(-1); };
-  $('nextBtn').onclick = function () { nextPrev(1); };
-  loadInput();
-};
