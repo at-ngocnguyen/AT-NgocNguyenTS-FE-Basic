@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: $primary;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  margin-top: $sm;
+  text-align: center;
+  font-size: $lg;
+  text-transform: uppercase;
+  padding: 10px 0;
+  margin-bottom: $sm;
+}
+
+h3 {
+  text-align: center;
+  font-size: $lg;
+  padding-bottom: $sm;
+}
+
+.tab {
+  display: none;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.clr:after {
+  content: "";
+  clear: both;
+  display: block;
+}
