@@ -2,10 +2,12 @@
   <div *ngFor="let child of listChild">
     <ng-container *ngIf="child.id==contentChild">
       {{child.content}}
-      <ng-container *ngTemplateOutlet="footer">
+      <div>
+        <ng-container *ngTemplateOutlet="footer">
 
-      </ng-container>
-      <button *ngIf="child.id==4" (click)="backChild()" class="btn btn-dark d-block">back</button>
+        </ng-container>
+      </div>
+      <button *ngIf="child.id===4" (click)="backChild()" class="btn btn-dark d-block">back</button>
     </ng-container>
   </div>
   <ng-template #footer>

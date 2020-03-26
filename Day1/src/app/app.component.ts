@@ -12,9 +12,9 @@ export class AppComponent {
   getData(token: number) {
     this.numberChild = token;
   }
+  
   setState(state: number) {
     this.numberChild = state;
-    console.log("AppComponent -> setState ->  this.numberChild",  this.numberChild)
   }
   ngOnInit() {
 
