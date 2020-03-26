@@ -1,5 +1,7 @@
-@import './assets/style/base/all';
-@import './assets/style/modules/all';
-@import './assets/style/layout/all';
-@import './assets/style/state/all';
-@import './assets/style/pages/all';
+/* You can add global styles to this file, and also import other style files */
+.active {
+  color: red
+}
+.d-block{
+  display: block;
+}

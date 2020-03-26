@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Day1';
+  numberChild: number;
+
+  getData(token: number) {
+    this.numberChild = token;
+  }
+  setState(state: number) {
+    this.numberChild = state;
+    console.log("AppComponent -> setState ->  this.numberChild",  this.numberChild)
+  }
+  ngOnInit() {
+
+  }
 }
