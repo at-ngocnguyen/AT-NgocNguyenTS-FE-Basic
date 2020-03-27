@@ -1,0 +1,8 @@
+<div>
+    <button (click)="getData(1)" [ngClass]="{active:numberChild===1}" class="btn">Content1</button>
+    <button (click)="getData(2)" [ngClass]="{active:numberChild===2}" class="btn">Content2</button>
+    <button (click)="getData(3)" [ngClass]="{active:numberChild===3}" class="btn">Content3</button>
+    <button (click)="getData(4)" [ngClass]="{active:numberChild===4}" class="btn">Content4</button>
+</div>
+
+<app-tabs [contentChild]="numberChild" (stateChild)="setState($event)"></app-tabs>

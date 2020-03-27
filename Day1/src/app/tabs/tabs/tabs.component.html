@@ -1,0 +1,16 @@
+<div class="tabs">
+  <div *ngFor="let child of listChild">
+    <ng-container *ngIf="child.id==contentChild">
+      {{child.content}}
+      <div>
+        <ng-container *ngTemplateOutlet="footer">
+
+        </ng-container>
+      </div>
+      <button *ngIf="child.id===4" (click)="backChild()" class="btn btn-dark d-block">back</button>
+    </ng-container>
+  </div>
+  <ng-template #footer>
+    &copy; CopyRight
+  </ng-template>
+</div>
